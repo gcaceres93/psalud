@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - psalud@localhost" uuid="45d35169-6442-4a49-98df-3b6da7d619db">
+    <database-info product="PostgreSQL" version="9.4.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.2">
+      <database id="1" name="psalud"/>
+      <schema id="2" parent="1" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>2579</introspection-state-number>
+        <introspection-timestamp>2015-11-23.17:29:47.525</introspection-timestamp>
+      </schema>
+      <sequence id="3" parent="2" name="agendamiento_id_agendamiento_seq">
+        <object-id>40961</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="4" parent="2" name="antecedentes_familiares_id_antecedente_familiar_seq">
+        <object-id>40992</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="5" parent="2" name="antecedentes_id_antecedente_seq">
+        <object-id>40983</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="6" parent="2" name="aspecto_id_aspecto_seq">
+        <object-id>41003</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="7" parent="2" name="aspectos_pa_id_aspecto_pa_seq">
+        <object-id>41012</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="8" parent="2" name="cargos_id_cargo_seq">
+        <object-id>41023</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="9" parent="2" name="consulta_cabecera_id_consulta_seq">
+        <object-id>41032</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="10" parent="2" name="consulta_detalle_id_consulta_detalle_seq">
+        <object-id>41043</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="11" parent="2" name="desarrollo_gestacion_id_gestacion_seq">
+        <object-id>41052</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="12" parent="2" name="desarrollo_gestacion_pa_id_gestacion_pa_seq">
+        <object-id>41061</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="13" parent="2" name="diagnostico_id_diagnostico_seq">
+        <object-id>41072</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="14" parent="2" name="factura_cabecera_id_factura_seq">
+        <object-id>41091</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="15" parent="2" name="factura_concepto_id_factura_concepto_seq">
+        <object-id>41101</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="16" parent="2" name="factura_detalle_id_factura_detalle_seq">
+        <object-id>41110</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="17" parent="2" name="historial_academico_id_historial_academico_seq">
+        <object-id>41120</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="18" parent="2" name="historial_academico_pa_id_academico_pa_seq">
+        <object-id>41129</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="19" parent="2" name="modalidad_id_modalidad_seq">
+        <object-id>41140</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="20" parent="2" name="persona_id_persona_seq">
+        <object-id>41157</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="21" parent="2" name="plan_de_tratamiento_id_tratamiento_seq">
+        <object-id>41169</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="22" parent="2" name="sucursal_id_sucursal_seq">
+        <object-id>41178</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="23" parent="2" name="test_aplicado_id_test_aplicado_seq">
+        <object-id>41190</object-id>
+        <state-number>1884</state-number>
+      </sequence>
+      <sequence id="24" parent="2" name="usuario_id_usuario_seq">
+        <object-id>65536</object-id>
+        <state-number>2534</state-number>
+      </sequence>
+      <table id="25" parent="2" name="agendamiento">
+        <object-id>40963</object-id>
+        <state-number>2558</state-number>
+      </table>
+      <table id="26" parent="2" name="anamnesis">
+        <object-id>40971</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="27" parent="2" name="antecedentes">
+        <object-id>40985</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="28" parent="2" name="antecedentes_familiares">
+        <object-id>40994</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="29" parent="2" name="aspecto">
+        <object-id>41005</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="30" parent="2" name="aspectos_pa">
+        <object-id>41014</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="31" parent="2" name="cargos">
+        <object-id>41025</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="32" parent="2" name="consulta_cabecera">
+        <object-id>41034</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="33" parent="2" name="consulta_detalle">
+        <object-id>41045</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="34" parent="2" name="desarrollo_gestacion">
+        <object-id>41054</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="35" parent="2" name="desarrollo_gestacion_pa">
+        <object-id>41063</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="36" parent="2" name="diagnostico">
+        <object-id>41074</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="37" parent="2" name="empleado">
+        <object-id>41081</object-id>
+        <state-number>2579</state-number>
+      </table>
+      <table id="38" parent="2" name="factura_cabecera">
+        <object-id>41093</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="39" parent="2" name="factura_concepto">
+        <object-id>41103</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="40" parent="2" name="factura_detalle">
+        <object-id>41112</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="41" parent="2" name="historial_academico">
+        <object-id>41122</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="42" parent="2" name="historial_academico_pa">
+        <object-id>41131</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="43" parent="2" name="modalidad">
+        <object-id>41142</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="44" parent="2" name="paciente">
+        <object-id>41149</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="45" parent="2" name="persona">
+        <object-id>41159</object-id>
+        <state-number>2539</state-number>
+      </table>
+      <table id="46" parent="2" name="plan_de_tratamiento">
+        <object-id>41171</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="47" parent="2" name="sucursal">
+        <object-id>41180</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="48" parent="2" name="test_aplicado">
+        <object-id>41192</object-id>
+        <state-number>1884</state-number>
+      </table>
+      <table id="49" parent="2" name="usuario">
+        <object-id>65538</object-id>
+        <state-number>2534</state-number>
+      </table>
+      <column id="50" parent="25" name="id_agendamiento">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;agendamiento_id_agendamiento_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="51" parent="25" name="id_modalidad">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="52" parent="25" name="codigo">
+        <state-number>1884</state-number>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="53" parent="25" name="id_sucursal">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="54" parent="25" name="fecha_programada">
+        <state-number>1884</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="55" parent="25" name="fecha_registro">
+        <state-number>1884</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="56" parent="25" name="empleado_registro">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="57" parent="25" name="comentario">
+        <state-number>2558</state-number>
+        <data-type>varchar(1024)</data-type>
+      </column>
+      <column id="58" parent="25" name="asistio">
+        <state-number>1884</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <column id="59" parent="25" name="hora_programada">
+        <state-number>2550</state-number>
+        <data-type>time</data-type>
+      </column>
+      <index id="60" parent="25" name="agendamiento_pk">
+        <object-id>40969</object-id>
+        <columns>id_agendamiento</columns>
+        <unique>1</unique>
+      </index>
+      <index id="61" parent="25" name="pk_agendamiento">
+        <object-id>40967</object-id>
+        <columns>id_agendamiento</columns>
+        <unique>1</unique>
+      </index>
+      <index id="62" parent="25" name="relationship_6_fk">
+        <object-id>40970</object-id>
+        <columns>id_modalidad</columns>
+      </index>
+      <key id="63" parent="25" name="pk_agendamiento">
+        <columns>id_agendamiento</columns>
+        <underlying-index>pk_agendamiento</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="64" parent="25" name="fk_agendami_relations_modalida">
+        <columns>id_modalidad</columns>
+        <ref-key>modalidad.pk_modalidad</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="65" parent="25" name="fk_agendami_reference_empleado">
+        <columns>codigo</columns>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="66" parent="25" name="fk_agendami_reference_sucursal">
+        <columns>id_sucursal</columns>
+        <ref-key>sucursal.pk_sucursal</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="67" parent="26" name="id_anamnesis">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="68" parent="26" name="id_diagnostico">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="69" parent="26" name="id_consulta">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="70" parent="26" name="cedula">
+        <state-number>1884</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="71" parent="26" name="observacion">
+        <state-number>1884</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="72" parent="26" name="motivo">
+        <state-number>1884</state-number>
+        <data-type>varchar(1024)</data-type>
+      </column>
+      <index id="73" parent="26" name="anamnesis_pk">
+        <object-id>40979</object-id>
+        <columns>id_anamnesis</columns>
+        <unique>1</unique>
+      </index>
+      <index id="74" parent="26" name="pk_anamnesis">
+        <object-id>40977</object-id>
+        <columns>id_anamnesis</columns>
+        <unique>1</unique>
+      </index>
+      <index id="75" parent="26" name="relationship_21_fk">
+        <object-id>40982</object-id>
+        <columns>id_diagnostico</columns>
+      </index>
+      <index id="76" parent="26" name="relationship_14_fk">
+        <object-id>40980</object-id>
+        <columns>id_consulta</columns>
+      </index>
+      <index id="77" parent="26" name="relationship_25_fk">
+        <object-id>40981</object-id>
+        <columns>cedula</columns>
+      </index>
+      <key id="78" parent="26" name="pk_anamnesis">
+        <columns>id_anamnesis</columns>
+        <underlying-index>pk_anamnesis</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="79" parent="26" name="fk_anamnesi_relations_diagnost">
+        <columns>id_diagnostico</columns>
+        <ref-key>diagnostico.pk_diagnostico</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="80" parent="26" name="fk_anamnesi_relations_consulta">
+        <columns>id_consulta</columns>
+        <ref-key>consulta_cabecera.pk_consulta_cabecera</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="81" parent="26" name="fk_anamnesi_relations_paciente">
+        <columns>cedula</columns>
+        <ref-key>paciente.pk_paciente</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="82" parent="27" name="id_antecedente">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;antecedentes_id_antecedente_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="83" parent="27" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="84" parent="27" name="antecedentes_pk">
+        <object-id>40991</object-id>
+        <columns>id_antecedente</columns>
+        <unique>1</unique>
+      </index>
+      <index id="85" parent="27" name="pk_antecedentes">
+        <object-id>40989</object-id>
+        <columns>id_antecedente</columns>
+        <unique>1</unique>
+      </index>
+      <key id="86" parent="27" name="pk_antecedentes">
+        <columns>id_antecedente</columns>
+        <underlying-index>pk_antecedentes</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="87" parent="28" name="id_antecedente_familiar">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;antecedentes_familiares_id_antecedente_familiar_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="88" parent="28" name="id_anamnesis">
+        <state-number>1884</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="89" parent="28" name="id_antecedente">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="90" parent="28" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="91" parent="28" name="antecedentes_familiares_pk">
+        <object-id>41000</object-id>
+        <columns>id_antecedente_familiar</columns>
+        <unique>1</unique>
+      </index>
+      <index id="92" parent="28" name="pk_antecedentes_familiares">
+        <object-id>40998</object-id>
+        <columns>id_antecedente_familiar</columns>
+        <unique>1</unique>
+      </index>
+      <index id="93" parent="28" name="relationship_15_fk">
+        <object-id>41001</object-id>
+        <columns>id_anamnesis</columns>
+      </index>
+      <index id="94" parent="28" name="relationship_31_fk">
+        <object-id>41002</object-id>
+        <columns>id_antecedente</columns>
+      </index>
+      <key id="95" parent="28" name="pk_antecedentes_familiares">
+        <columns>id_antecedente_familiar</columns>
+        <underlying-index>pk_antecedentes_familiares</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="96" parent="28" name="fk_antecede_relations_anamnesi">
+        <columns>id_anamnesis</columns>
+        <ref-key>anamnesis.pk_anamnesis</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="97" parent="28" name="fk_antecede_relations_antecede">
+        <columns>id_antecedente</columns>
+        <ref-key>antecedentes.pk_antecedentes</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="98" parent="29" name="id_aspecto">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;aspecto_id_aspecto_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="99" parent="29" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="100" parent="29" name="aspecto_pk">
+        <object-id>41011</object-id>
+        <columns>id_aspecto</columns>
+        <unique>1</unique>
+      </index>
+      <index id="101" parent="29" name="pk_aspecto">
+        <object-id>41009</object-id>
+        <columns>id_aspecto</columns>
+        <unique>1</unique>
+      </index>
+      <key id="102" parent="29" name="pk_aspecto">
+        <columns>id_aspecto</columns>
+        <underlying-index>pk_aspecto</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="103" parent="30" name="id_aspecto_pa">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;aspectos_pa_id_aspecto_pa_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="104" parent="30" name="id_aspecto">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="105" parent="30" name="id_anamnesis">
+        <state-number>1884</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="106" parent="30" name="activo">
+        <state-number>1884</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <column id="107" parent="30" name="observacion">
+        <state-number>1884</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <index id="108" parent="30" name="aspectos_pa_pk">
+        <object-id>41020</object-id>
+        <columns>id_aspecto_pa</columns>
+        <unique>1</unique>
+      </index>
+      <index id="109" parent="30" name="pk_aspectos_pa">
+        <object-id>41018</object-id>
+        <columns>id_aspecto_pa</columns>
+        <unique>1</unique>
+      </index>
+      <index id="110" parent="30" name="relationship_34_fk">
+        <object-id>41022</object-id>
+        <columns>id_aspecto</columns>
+      </index>
+      <index id="111" parent="30" name="relationship_22_fk">
+        <object-id>41021</object-id>
+        <columns>id_anamnesis</columns>
+      </index>
+      <key id="112" parent="30" name="pk_aspectos_pa">
+        <columns>id_aspecto_pa</columns>
+        <underlying-index>pk_aspectos_pa</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="113" parent="30" name="fk_aspectos_relations_aspecto">
+        <columns>id_aspecto</columns>
+        <ref-key>aspecto.pk_aspecto</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="114" parent="30" name="fk_aspectos_relations_anamnesi">
+        <columns>id_anamnesis</columns>
+        <ref-key>anamnesis.pk_anamnesis</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="115" parent="31" name="id_cargo">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;cargos_id_cargo_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="116" parent="31" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="117" parent="31" name="cargos_pk">
+        <object-id>41031</object-id>
+        <columns>id_cargo</columns>
+        <unique>1</unique>
+      </index>
+      <index id="118" parent="31" name="pk_cargos">
+        <object-id>41029</object-id>
+        <columns>id_cargo</columns>
+        <unique>1</unique>
+      </index>
+      <key id="119" parent="31" name="pk_cargos">
+        <columns>id_cargo</columns>
+        <underlying-index>pk_cargos</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="120" parent="32" name="id_consulta">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;consulta_cabecera_id_consulta_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="121" parent="32" name="cedula">
+        <state-number>1884</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="122" parent="32" name="id_consulta_detalle">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="123" parent="32" name="observaciones">
+        <state-number>1884</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="124" parent="32" name="cantidad_sesiones">
+        <state-number>1884</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <index id="125" parent="32" name="consulta_cabecera_pk">
+        <object-id>41040</object-id>
+        <columns>id_consulta</columns>
+        <unique>1</unique>
+      </index>
+      <index id="126" parent="32" name="pk_consulta_cabecera">
+        <object-id>41038</object-id>
+        <columns>id_consulta</columns>
+        <unique>1</unique>
+      </index>
+      <index id="127" parent="32" name="relationship_23_fk">
+        <object-id>41041</object-id>
+        <columns>cedula</columns>
+      </index>
+      <index id="128" parent="32" name="relationship_26_fk">
+        <object-id>41042</object-id>
+        <columns>id_consulta_detalle</columns>
+      </index>
+      <key id="129" parent="32" name="pk_consulta_cabecera">
+        <columns>id_consulta</columns>
+        <underlying-index>pk_consulta_cabecera</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="130" parent="32" name="fk_consulta_relations_paciente">
+        <columns>cedula</columns>
+        <ref-key>paciente.pk_paciente</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="131" parent="32" name="fk_consulta_relations_consulta">
+        <columns>id_consulta_detalle</columns>
+        <ref-key>consulta_detalle.pk_consulta_detalle</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="132" parent="33" name="id_consulta_detalle">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;consulta_detalle_id_consulta_detalle_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="133" parent="33" name="id_factura">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="134" parent="33" name="id_agendamiento">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="135" parent="33" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="136" parent="33" name="consulta_detalle_pk">
+        <object-id>41051</object-id>
+        <columns>id_consulta_detalle</columns>
+        <unique>1</unique>
+      </index>
+      <index id="137" parent="33" name="pk_consulta_detalle">
+        <object-id>41049</object-id>
+        <columns>id_consulta_detalle</columns>
+        <unique>1</unique>
+      </index>
+      <key id="138" parent="33" name="pk_consulta_detalle">
+        <columns>id_consulta_detalle</columns>
+        <underlying-index>pk_consulta_detalle</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="139" parent="33" name="fk_consulta_reference_factura_">
+        <columns>id_factura</columns>
+        <ref-key>factura_cabecera.pk_factura_cabecera</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="140" parent="33" name="fk_consulta_reference_agendami">
+        <columns>id_agendamiento</columns>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="141" parent="34" name="id_gestacion">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;desarrollo_gestacion_id_gestacion_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="142" parent="34" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="143" parent="34" name="desarrollo_gestacion_pk">
+        <object-id>41060</object-id>
+        <columns>id_gestacion</columns>
+        <unique>1</unique>
+      </index>
+      <index id="144" parent="34" name="pk_desarrollo_gestacion">
+        <object-id>41058</object-id>
+        <columns>id_gestacion</columns>
+        <unique>1</unique>
+      </index>
+      <key id="145" parent="34" name="pk_desarrollo_gestacion">
+        <columns>id_gestacion</columns>
+        <underlying-index>pk_desarrollo_gestacion</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="146" parent="35" name="id_gestacion_pa">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;desarrollo_gestacion_pa_id_gestacion_pa_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="147" parent="35" name="id_gestacion">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="148" parent="35" name="id_anamnesis">
+        <state-number>1884</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="149" parent="35" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="150" parent="35" name="activo">
+        <state-number>1884</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <index id="151" parent="35" name="desarrollo_gestacion_pa_pk">
+        <object-id>41069</object-id>
+        <columns>id_gestacion_pa</columns>
+        <unique>1</unique>
+      </index>
+      <index id="152" parent="35" name="pk_desarrollo_gestacion_pa">
+        <object-id>41067</object-id>
+        <columns>id_gestacion_pa</columns>
+        <unique>1</unique>
+      </index>
+      <index id="153" parent="35" name="relationship_32_fk">
+        <object-id>41071</object-id>
+        <columns>id_gestacion</columns>
+      </index>
+      <index id="154" parent="35" name="relationship_18_fk">
+        <object-id>41070</object-id>
+        <columns>id_anamnesis</columns>
+      </index>
+      <key id="155" parent="35" name="pk_desarrollo_gestacion_pa">
+        <columns>id_gestacion_pa</columns>
+        <underlying-index>pk_desarrollo_gestacion_pa</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="156" parent="35" name="fk_desarrol_relations_desarrol">
+        <columns>id_gestacion</columns>
+        <ref-key>desarrollo_gestacion.pk_desarrollo_gestacion</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="157" parent="35" name="fk_desarrol_relations_anamnesi">
+        <columns>id_anamnesis</columns>
+        <ref-key>anamnesis.pk_anamnesis</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="158" parent="36" name="id_diagnostico">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;diagnostico_id_diagnostico_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="159" parent="36" name="id_test_aplicado">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="160" parent="36" name="id_tratamiento">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="161" parent="36" name="observaciones">
+        <state-number>1884</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="162" parent="36" name="resultado_obtenido">
+        <state-number>1884</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="163" parent="36" name="acepta_tratamiento">
+        <state-number>1884</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <index id="164" parent="36" name="diagnostico_pk">
+        <object-id>41080</object-id>
+        <columns>id_diagnostico</columns>
+        <unique>1</unique>
+      </index>
+      <index id="165" parent="36" name="pk_diagnostico">
+        <object-id>41078</object-id>
+        <columns>id_diagnostico</columns>
+        <unique>1</unique>
+      </index>
+      <key id="166" parent="36" name="pk_diagnostico">
+        <columns>id_diagnostico</columns>
+        <underlying-index>pk_diagnostico</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="167" parent="36" name="fk_diagnost_reference_test_apl">
+        <columns>id_test_aplicado</columns>
+        <ref-key>test_aplicado.pk_test_aplicado</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="168" parent="36" name="fk_diagnost_reference_plan_de_">
+        <columns>id_tratamiento</columns>
+        <ref-key>plan_de_tratamiento.pk_plan_de_tratamiento</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="169" parent="37" name="id_persona">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="170" parent="37" name="codigo">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="171" parent="37" name="id_cargo">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="172" parent="37" name="apellido">
+        <state-number>2573</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="173" parent="37" name="hdesde">
+        <state-number>2576</state-number>
+        <data-type>time</data-type>
+      </column>
+      <column id="174" parent="37" name="hhasta">
+        <state-number>2577</state-number>
+        <data-type>time</data-type>
+      </column>
+      <column id="175" parent="37" name="especialidad">
+        <state-number>2579</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="176" parent="37" name="empleado_pk">
+        <object-id>41089</object-id>
+        <columns>codigo</columns>
+        <unique>1</unique>
+      </index>
+      <index id="177" parent="37" name="pk_empleado">
+        <object-id>41087</object-id>
+        <columns>codigo</columns>
+        <unique>1</unique>
+      </index>
+      <index id="178" parent="37" name="empleado_persona_fk">
+        <object-id>41090</object-id>
+        <columns>id_persona</columns>
+      </index>
+      <key id="179" parent="37" name="pk_empleado">
+        <columns>codigo</columns>
+        <underlying-index>pk_empleado</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="180" parent="37" name="fk_empleado_empleado__persona">
+        <columns>id_persona</columns>
+        <ref-key>persona.pk_persona</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="181" parent="37" name="fk_empleado_reference_cargos">
+        <columns>id_cargo</columns>
+        <ref-key>cargos.pk_cargos</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="182" parent="38" name="id_factura">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;factura_cabecera_id_factura_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="183" parent="38" name="id_factura_detalle">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="184" parent="38" name="nro">
+        <state-number>1884</state-number>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="185" parent="38" name="monto_total">
+        <state-number>1884</state-number>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="186" parent="38" name="timbrado">
+        <state-number>1884</state-number>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="187" parent="38" name="vigencia_timbrado">
+        <state-number>1884</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="188" parent="38" name="observacion">
+        <state-number>1884</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="189" parent="38" name="usuario">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="190" parent="38" name="tipo_pago">
+        <state-number>1884</state-number>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="191" parent="38" name="factura_cabecera_pk">
+        <object-id>41099</object-id>
+        <columns>id_factura</columns>
+        <unique>1</unique>
+      </index>
+      <index id="192" parent="38" name="pk_factura_cabecera">
+        <object-id>41097</object-id>
+        <columns>id_factura</columns>
+        <unique>1</unique>
+      </index>
+      <index id="193" parent="38" name="relationship_17_fk">
+        <object-id>41100</object-id>
+        <columns>id_factura_detalle</columns>
+      </index>
+      <key id="194" parent="38" name="pk_factura_cabecera">
+        <columns>id_factura</columns>
+        <underlying-index>pk_factura_cabecera</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="195" parent="38" name="fk_factura__relations_factura_">
+        <columns>id_factura_detalle</columns>
+        <ref-key>factura_detalle.pk_factura_detalle</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="196" parent="39" name="id_factura_concepto">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;factura_concepto_id_factura_concepto_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="197" parent="39" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="198" parent="39" name="factura_concepto_pk">
+        <object-id>41109</object-id>
+        <columns>id_factura_concepto</columns>
+        <unique>1</unique>
+      </index>
+      <index id="199" parent="39" name="pk_factura_concepto">
+        <object-id>41107</object-id>
+        <columns>id_factura_concepto</columns>
+        <unique>1</unique>
+      </index>
+      <key id="200" parent="39" name="pk_factura_concepto">
+        <columns>id_factura_concepto</columns>
+        <underlying-index>pk_factura_concepto</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="201" parent="40" name="id_factura_detalle">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;factura_detalle_id_factura_detalle_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="202" parent="40" name="id_factura_concepto">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="203" parent="40" name="iva5">
+        <state-number>1884</state-number>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="204" parent="40" name="iva10">
+        <state-number>1884</state-number>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="205" parent="40" name="gravada5">
+        <state-number>1884</state-number>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="206" parent="40" name="gravada10">
+        <state-number>1884</state-number>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="207" parent="40" name="exentas">
+        <state-number>1884</state-number>
+        <data-type>bigint</data-type>
+      </column>
+      <index id="208" parent="40" name="factura_detalle_pk">
+        <object-id>41118</object-id>
+        <columns>id_factura_detalle</columns>
+        <unique>1</unique>
+      </index>
+      <index id="209" parent="40" name="pk_factura_detalle">
+        <object-id>41116</object-id>
+        <columns>id_factura_detalle</columns>
+        <unique>1</unique>
+      </index>
+      <index id="210" parent="40" name="relationship_20_fk">
+        <object-id>41119</object-id>
+        <columns>id_factura_concepto</columns>
+      </index>
+      <key id="211" parent="40" name="pk_factura_detalle">
+        <columns>id_factura_detalle</columns>
+        <underlying-index>pk_factura_detalle</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="212" parent="40" name="fk_factura__relations_factura_">
+        <columns>id_factura_concepto</columns>
+        <ref-key>factura_concepto.pk_factura_concepto</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="213" parent="41" name="id_historial_academico">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;historial_academico_id_historial_academico_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="214" parent="41" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="215" parent="41" name="historial_academico_pk">
+        <object-id>41128</object-id>
+        <columns>id_historial_academico</columns>
+        <unique>1</unique>
+      </index>
+      <index id="216" parent="41" name="pk_historial_academico">
+        <object-id>41126</object-id>
+        <columns>id_historial_academico</columns>
+        <unique>1</unique>
+      </index>
+      <key id="217" parent="41" name="pk_historial_academico">
+        <columns>id_historial_academico</columns>
+        <underlying-index>pk_historial_academico</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="218" parent="42" name="id_academico_pa">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;historial_academico_pa_id_academico_pa_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="219" parent="42" name="id_historial_academico">
+        <state-number>1884</state-number>
+        <data-type>integer</data-type>
+      </column>
+      <column id="220" parent="42" name="id_anamnesis">
+        <state-number>1884</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="221" parent="42" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="222" parent="42" name="activo">
+        <state-number>1884</state-number>
+        <data-type>boolean</data-type>
+      </column>
+      <index id="223" parent="42" name="historial_academico_pa_pk">
+        <object-id>41137</object-id>
+        <columns>id_academico_pa</columns>
+        <unique>1</unique>
+      </index>
+      <index id="224" parent="42" name="pk_historial_academico_pa">
+        <object-id>41135</object-id>
+        <columns>id_academico_pa</columns>
+        <unique>1</unique>
+      </index>
+      <index id="225" parent="42" name="relationship_33_fk">
+        <object-id>41139</object-id>
+        <columns>id_historial_academico</columns>
+      </index>
+      <index id="226" parent="42" name="relationship_19_fk">
+        <object-id>41138</object-id>
+        <columns>id_anamnesis</columns>
+      </index>
+      <key id="227" parent="42" name="pk_historial_academico_pa">
+        <columns>id_academico_pa</columns>
+        <underlying-index>pk_historial_academico_pa</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="228" parent="42" name="fk_historia_relations_historia">
+        <columns>id_historial_academico</columns>
+        <ref-key>historial_academico.pk_historial_academico</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="229" parent="42" name="fk_historia_relations_anamnesi">
+        <columns>id_anamnesis</columns>
+        <ref-key>anamnesis.pk_anamnesis</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="230" parent="43" name="id_modalidad">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;modalidad_id_modalidad_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="231" parent="43" name="descripcion">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="232" parent="43" name="modalidad_pk">
+        <object-id>41148</object-id>
+        <columns>id_modalidad</columns>
+        <unique>1</unique>
+      </index>
+      <index id="233" parent="43" name="pk_modalidad">
+        <object-id>41146</object-id>
+        <columns>id_modalidad</columns>
+        <unique>1</unique>
+      </index>
+      <key id="234" parent="43" name="pk_modalidad">
+        <columns>id_modalidad</columns>
+        <underlying-index>pk_modalidad</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="235" parent="44" name="id_persona">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+      </column>
+      <column id="236" parent="44" name="cedula">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="237" parent="44" name="razon_social">
+        <state-number>1884</state-number>
+        <data-type>varchar(150)</data-type>
+      </column>
+      <column id="238" parent="44" name="ruc">
+        <state-number>1884</state-number>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <index id="239" parent="44" name="paciente_pk">
+        <object-id>41154</object-id>
+        <columns>cedula</columns>
+        <unique>1</unique>
+      </index>
+      <index id="240" parent="44" name="pk_paciente">
+        <object-id>41152</object-id>
+        <columns>cedula</columns>
+        <unique>1</unique>
+      </index>
+      <index id="241" parent="44" name="cliente_persona_fk">
+        <object-id>41156</object-id>
+        <columns>id_persona</columns>
+      </index>
+      <index id="242" parent="44" name="relationship_24_fk">
+        <object-id>41155</object-id>
+        <columns>id_anamnesis</columns>
+      </index>
+      <key id="243" parent="44" name="pk_paciente">
+        <columns>cedula</columns>
+        <underlying-index>pk_paciente</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="244" parent="44" name="fk_paciente_cliente_p_persona">
+        <columns>id_persona</columns>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="245" parent="44" name="fk_paciente_relations_anamnesi">
+        <columns>id_anamnesis</columns>
+        <ref-key>anamnesis.pk_anamnesis</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="246" parent="45" name="nombre">
+        <state-number>1884</state-number>
+        <data-type>varchar(300)</data-type>
+      </column>
+      <column id="247" parent="45" name="apellido">
+        <state-number>1884</state-number>
+        <data-type>varchar(1024)</data-type>
+      </column>
+      <column id="248" parent="45" name="nacimiento">
+        <state-number>1884</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="249" parent="45" name="telefono">
+        <state-number>1884</state-number>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="250" parent="45" name="direccion">
+        <state-number>1884</state-number>
+        <data-type>varchar(1024)</data-type>
+      </column>
+      <column id="251" parent="45" name="email">
+        <state-number>1884</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="252" parent="45" name="id_persona">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;persona_id_persona_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="253" parent="45" name="cedula">
+        <state-number>2539</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="254" parent="45" name="persona_pk">
+        <object-id>41168</object-id>
+        <columns>id_persona</columns>
+        <unique>1</unique>
+      </index>
+      <index id="255" parent="45" name="pk_persona">
+        <object-id>41166</object-id>
+        <columns>id_persona</columns>
+        <unique>1</unique>
+      </index>
+      <key id="256" parent="45" name="pk_persona">
+        <columns>id_persona</columns>
+        <underlying-index>pk_persona</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="257" parent="46" name="id_tratamiento">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;plan_de_tratamiento_id_tratamiento_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="258" parent="46" name="fecha_inicio">
+        <state-number>1884</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="259" parent="46" name="fecha_final">
+        <state-number>1884</state-number>
+        <data-type>date</data-type>
+      </column>
+      <column id="260" parent="46" name="cantidad_sesiones">
+        <state-number>1884</state-number>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="261" parent="46" name="alcance">
+        <state-number>1884</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="262" parent="46" name="resultados_esperados">
+        <state-number>1884</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="263" parent="46" name="pk_plan_de_tratamiento">
+        <object-id>41175</object-id>
+        <columns>id_tratamiento</columns>
+        <unique>1</unique>
+      </index>
+      <index id="264" parent="46" name="plan_de_tratamiento_pk">
+        <object-id>41177</object-id>
+        <columns>id_tratamiento</columns>
+        <unique>1</unique>
+      </index>
+      <key id="265" parent="46" name="pk_plan_de_tratamiento">
+        <columns>id_tratamiento</columns>
+        <underlying-index>pk_plan_de_tratamiento</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="266" parent="47" name="id_sucursal">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;sucursal_id_sucursal_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="267" parent="47" name="nombre">
+        <state-number>1884</state-number>
+        <data-type>varchar(300)</data-type>
+      </column>
+      <column id="268" parent="47" name="direccion">
+        <state-number>1884</state-number>
+        <data-type>varchar(1024)</data-type>
+      </column>
+      <column id="269" parent="47" name="telefono">
+        <state-number>1884</state-number>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <index id="270" parent="47" name="pk_sucursal">
+        <object-id>41187</object-id>
+        <columns>id_sucursal</columns>
+        <unique>1</unique>
+      </index>
+      <index id="271" parent="47" name="sucursal_pk">
+        <object-id>41189</object-id>
+        <columns>id_sucursal</columns>
+        <unique>1</unique>
+      </index>
+      <key id="272" parent="47" name="pk_sucursal">
+        <columns>id_sucursal</columns>
+        <underlying-index>pk_sucursal</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="273" parent="48" name="id_test_aplicado">
+        <state-number>1884</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;test_aplicado_id_test_aplicado_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="274" parent="48" name="resultado">
+        <state-number>1884</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="275" parent="48" name="observacion">
+        <state-number>1884</state-number>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <index id="276" parent="48" name="pk_test_aplicado">
+        <object-id>41196</object-id>
+        <columns>id_test_aplicado</columns>
+        <unique>1</unique>
+      </index>
+      <index id="277" parent="48" name="test_aplicado_pk">
+        <object-id>41198</object-id>
+        <columns>id_test_aplicado</columns>
+        <unique>1</unique>
+      </index>
+      <key id="278" parent="48" name="pk_test_aplicado">
+        <columns>id_test_aplicado</columns>
+        <underlying-index>pk_test_aplicado</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="279" parent="49" name="usuario">
+        <state-number>2534</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="280" parent="49" name="pass">
+        <state-number>2534</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="281" parent="49" name="id_usuario">
+        <state-number>2534</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;usuario_id_usuario_seq&apos;::regclass)</default-expression>
+      </column>
+      <index id="282" parent="49" name="usuario_pkey">
+        <object-id>65545</object-id>
+        <columns>id_usuario</columns>
+        <unique>1</unique>
+      </index>
+      <key id="283" parent="49" name="usuario_pkey">
+        <columns>id_usuario</columns>
+        <underlying-index>usuario_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>
