@@ -156,12 +156,12 @@ if(isset($_SESSION['usuario'])){
 
 </div>
 <br/>
-
+<!-- gay 2-->
 <br/>
 
 <div class="form-group">
 <div class="col-xs-offset-3 col-xs-9">
-<!-- HOLA MUNDO dddff-->
+<!-- HOLA MUNDO- gggftjgnjihtiddr-->
 <input type="submit" class="btn btn-success" id="guardar" value="Facturar" >
 <input type="reset" class="btn btn-default" value="Limpiar">
 </div>
