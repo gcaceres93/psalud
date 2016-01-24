@@ -156,7 +156,7 @@ if(isset($_SESSION['usuario'])){
 
 </div>
 <br/>
-
+<!-- gay -->
 <br/>
 
 <div class="form-group">
