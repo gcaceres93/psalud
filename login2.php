@@ -15,7 +15,6 @@
 
         var nombre= $("#usuario").val();
         var pass=$("#pass").val();
-
         var datos={
           'usuario': nombre,
           'pass':pass
