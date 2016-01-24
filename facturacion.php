@@ -161,7 +161,7 @@ if(isset($_SESSION['usuario'])){
 
 <div class="form-group">
 <div class="col-xs-offset-3 col-xs-9">
-<!-- HOLA MUNDO ddd-->
+<!-- HOLA MUNDO dddff-->
 <input type="submit" class="btn btn-success" id="guardar" value="Facturar" >
 <input type="reset" class="btn btn-default" value="Limpiar">
 </div>
