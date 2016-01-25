@@ -1,0 +1,18 @@
+Chicas, esta es la planificacion de nuestras tareas, por CU:
+Lucas:
+* ABM Personas(e.j:registrar paciente, modificar medico)
+* Facturacion
+* Registrar ficha de paciente
+Leo:
+* Listar personas y reportes de consultas de los pacientes
+* ABM y listado usuarios (tiene que manejarse permisos por usuario)
+* Reporte de consultas de un dia, semana y mes especificos.
+Gabriel:
+* Agendar consulta
+* Registrar anamnesis, diagnostico, tratamiento y seguimiento.
+Gabriel y Lucas:
+* Generar Test
+* Aplicar test
+
+
+
