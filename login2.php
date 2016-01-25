@@ -60,7 +60,7 @@
 </head>
 	<!-- PROBANDO COMMIT GIT -->
 
-<body ontouchstart="" style="background-color:#A7C8FE">
+<body  ontouchstart="" style="background-color:#A7C8FE">
 <?php session_start();
         if(isset($_SESSION['usuario'])) {
             header('Location:home.php');
