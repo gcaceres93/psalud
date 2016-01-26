@@ -94,14 +94,15 @@
 
                 $.ajax({
                     type:"post",
-                    url:"insertar_persona.php",
+                    url:"actualizar_persona.php",
                     data: datos,
                     success:function (data){
                         if (data == "ok"){
-
+                            alert ('Se ha modifciado con exito');
                             window.location = 'home.php';
 
                         }    else{
+                            alert ('No Se ha modifciado con exito');
                             $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
                         }
                     }
