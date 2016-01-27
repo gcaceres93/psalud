@@ -36,7 +36,7 @@
                 url:"recuperar_medico.php",
                 data:{'cedula':cedula},
                 success:function (data){
-                    alert (data.cedula2);
+
                     if (data.cedula2 == "No existe")
                     {
                         alert ('No se ha encontrado medico con ese numero de cedula');
@@ -47,6 +47,7 @@
                         $("#nombre").val(data.nombre);
                         $("#fecha").val(data.nacimiento);
                         $("#apellido").val(data.apellido);
+                        $("#ruc").val(data.ruc);
                         $("#especialidad").val(data.especialidad);
                         $("#email").val(data.email);
                         $("#telefono").val(data.telefono);
@@ -66,13 +67,13 @@
 
                 var nombre= $("#nombre").val();
                 var apellido=$("#apellido").val();
-                var cedula=$("#cedula").val();
+                var cedula=$("#cedulaM").val();
                 var fecha=$("#fecha").val();
                 var ruc=$("#ruc").val();
                 var telefono=$("#telefono").val();
                 var email=$("#email").val();
                 var direccion=$("#direccion").val();
-                var especialidad=$("#Especialidad").val();
+                var especialidad=$("#especialidad").val();
                 var hdesde=$("#hdesde").val();
                 var hhasta=$("#hhasta").val();
                 var ventana='medico';
@@ -97,13 +98,15 @@
                     url:"actualizar_persona.php",
                     data: datos,
                     success:function (data){
-                        if (data == "ok"){
+                        if (data.trim() == "ok"){
                             alert ('Se ha modifciado con exito');
                             window.location = 'home.php';
 
                         }    else{
-                            alert ('No Se ha modifciado con exito');
+                            alert (data);
+
                             $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
+                            alert ('NO Se ha modifciado con exito');
                         }
                     }
                 });

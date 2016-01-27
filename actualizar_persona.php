@@ -15,7 +15,7 @@ $fecha = $_POST["fecha"];
 $ventana = $_POST ["ventana"];
 $ruc = $_POST ["ruc"];
 
-$query="update persona set  nombre='$nombre', apellido='$apellido' ,nacimiento='$nacimiento',telefono='$telefono',direccion='$direccion',email='$email',cedula='$cedula',ruc='$ruc' where cedula='$cedula' ";
+$query="update persona set  nombre='$nombre', apellido='$apellido' ,nacimiento='$fecha',telefono='$telefono',direccion='$direccion',email='$email',cedula='$cedula',ruc='$ruc' where cedula='$cedula' ";
 
 $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
 
