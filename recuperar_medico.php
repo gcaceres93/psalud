@@ -27,7 +27,7 @@ if ($resultSet2==false) {
         $respuesta['hdesde'] = $row["hdesde"];
         $respuesta['hhasta'] = $row["hhasta"];
         $respuesta['ruc'] = $row["ruc"];
-
+ 
 
     }
 
