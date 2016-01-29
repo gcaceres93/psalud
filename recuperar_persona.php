@@ -4,7 +4,7 @@ include_once 'biblioteca/conexionBd.php';
 $recursoDeConexion = conectar('postgresql');
 //Realizar Select
 $cedula = $_GET["cedula"];
-$query="select p.nombre,p.apellido,p.nacimiento,p.telefono,p.direccion,p.email,p.cedula, e.especialidad, e.hdesde, e.hhasta,p.ruc from persona p, empleado e  where p.cedula = '$cedula' and e.id_persona=p.id_persona   ";
+$query="select p.nombre,p.apellido,p.nacimiento,p.telefono,p.direccion,p.email,p.cedula,p.ruc from persona p  where p.cedula = '$cedula' ";
 $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
 $resultSet2 = pg_fetch_assoc($resultSet);
 if ($resultSet2==false) {
