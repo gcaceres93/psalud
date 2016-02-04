@@ -112,6 +112,7 @@
 				var total_iva = $("#total_iva").val();
 				var total = $("#total").val();
 				var direccion = $("#direccion").val();
+
 				var datos={
 					'cedulaPaciente': cedulaP,
 					'cedulaMedico':cedulaM,
