@@ -236,7 +236,7 @@ if(isset($_SESSION['usuario'])){
 </body>
 <?php
 }else{
-	echo "Favor iniciar sesion para acceder al sistema";
+	echo "Favor  iniciar sesion para acceeder al sistema";
 }
 ?>
 </html>
