@@ -9,7 +9,7 @@ $direccion = $_POST["direccion"];
 $cantidadH = $_POST["cantidadHoras"];
 $iva = $_POST["totalIVA"];
 $total = $_POST["totalP"];
-session_start();
+ session_start();
 $usuario = $_SESSION["usuario"];
 
 
