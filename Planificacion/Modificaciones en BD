@@ -1,0 +1,5 @@
+
+Lucas :se agrega la tabla parametros donde se agregan los campos: ruc,vencimiento_timbrado,timbrado,ultimo_numero factura, se modifica el campo usuario en la tabla factura_cabecera
+se pasa de tipo de dato int a varchar y se agrega el campo fecha; en la tabla persona agrego el campo RUC
+
+Leo: Se agrega la tabla roles para seleccionar los roles que van a tener los usuarios
