@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fb6b123-7a14-47bd-b0a4-d2e5cee6b5e6" name="Default" comment="Merge branch 'master' of https://github.com/gcaceres93/psalud&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/workspace.xml&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Planificacion/Planificacion" afterPath="$PROJECT_DIR$/Planificacion/Planificacion" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/medicosServiceServer.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/asd.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/agendaService.php" afterPath="$PROJECT_DIR$/MedicosServiceClient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="psalud.iws" />
@@ -20,22 +25,33 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DatabaseView">
-    <option name="FLATTEN" value="false" />
-    <option name="GROUP_BY_TYPE" value="true" />
-    <option name="SORT_CHILDREN" value="false" />
-    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
     <PATH>
       <PATH_ELEMENT>
         <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - psalud@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="PostgreSQL - psalud@localhost" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="psalud.public" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
     </PATH>
   </component>
@@ -44,7 +60,84 @@
     <favorites_list name="psalud" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="recuperar_medico.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recuperar_medico.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.129032">
+              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+              <folding>
+                <marker date="1454218030772" expanded="true" signature="147:353" placeholder="select p.nom..persona..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listado_personas.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/listado_personas.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+              <folding>
+                <marker date="1454653440732" expanded="true" signature="632:828" placeholder="select p.ced..persona..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medicosServiceServer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/medicosServiceServer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.32721713">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <marker date="1454895440920" expanded="true" signature="372:568" placeholder="select p.ced..persona..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medicosServiceClient.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/medicosServiceClient.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="verificarFecha.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/verificarFecha.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+              <folding>
+                <marker date="1453670816409" expanded="true" signature="243:449" placeholder="select a.id_..agendamiento..." />
+                <marker date="1453670816409" expanded="true" signature="1007:1220" placeholder="select a.id_..agendamiento..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertar_facturacion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/insertar_facturacion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <marker date="1454653440731" expanded="true" signature="407:656" placeholder="select (sele..parametros..." />
+                <marker date="1454653440731" expanded="true" signature="415:490" placeholder="select max(v..parametros..." />
+                <marker date="1454653440731" expanded="true" signature="507:568" placeholder="select valor..parametros..." />
+                <marker date="1454653440731" expanded="true" signature="986:1078" placeholder="insert into factura_detalle..." />
+                <marker date="1454653440731" expanded="true" signature="1089:1148" placeholder="select max(i..factura_detalle..." />
+                <marker date="1454653440731" expanded="true" signature="1348:1558" placeholder="insert into factura_cabecera..." />
+                <marker date="1454653440731" expanded="true" signature="1633:1717" placeholder="update param..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="facturacion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/facturacion.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,41 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login2.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="asd.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asd.php">
+      <file leaf-file-name="Modificaciones en BD" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Planificacion/Modificaciones en BD">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modificar_medico.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modificar_medico.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Planificacion" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Planificacion/Planificacion">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45373666">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -130,6 +193,13 @@
         <option value="$PROJECT_DIR$/login2.php" />
         <option value="$PROJECT_DIR$/modificar_medico.php" />
         <option value="$PROJECT_DIR$/Planificacion/Planificacion" />
+        <option value="$PROJECT_DIR$/agendaService.php" />
+        <option value="$PROJECT_DIR$/insertar_facturacion.php" />
+        <option value="$PROJECT_DIR$/medicosService.php" />
+        <option value="$PROJECT_DIR$/medicos.wsdl" />
+        <option value="$PROJECT_DIR$/MedicosServiceClient.php" />
+        <option value="$PROJECT_DIR$/medicosServiceClient.php" />
+        <option value="$PROJECT_DIR$/medicosServiceServer.php" />
       </list>
     </option>
   </component>
@@ -138,18 +208,15 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
-  <component name="NamedScopeManager">
-    <order />
-  </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP from XAMPP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="33" />
-    <option name="width" value="1285" />
-    <option name="height" value="1006" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -172,8 +239,11 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -209,11 +279,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/php/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -235,7 +304,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1132" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="dynamic.classpath" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -246,7 +315,7 @@
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.login2.php">
-    <configuration default="false" name="login2.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/psalud//login2.php">
+    <configuration default="false" name="login2.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:8020/psalud//login2.php">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -275,6 +344,12 @@
       <tasks />
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
       <envs />
       <method />
     </configuration>
@@ -361,7 +436,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453687669742</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Merge branch 'master' of https://github.com/gcaceres93/psalud&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/workspace.xml&#10;">
+      <created>1454253634722</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1454253634722</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -379,53 +460,53 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="33" width="1285" height="1006" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29714286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15351813" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3257143" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33225107" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827103" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990665" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18489583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.153125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21530055" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33225107" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827103" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990665" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3365801" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27292112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16151386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827103" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3990665" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3365801" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27292112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16151386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827103" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990665" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -452,64 +533,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registrar_consulta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="155" column="61" selection-start-line="155" selection-start-column="61" selection-end-line="155" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/facturacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="177" column="2" selection-start-line="177" selection-start-column="2" selection-end-line="177" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registrar_consulta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="174" column="0" selection-start-line="174" selection-start-column="0" selection-end-line="178" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/facturacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/verificarFecha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buscarMedico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/insertar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -587,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/facturacion.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/biblioteca/conexionBd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -612,13 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/verificarFecha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5161295">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -680,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agendar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.4838705">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -811,6 +813,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/login2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modificar_medico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Planificacion/Planificacion">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/facturacion.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/biblioteca/lib/nusoap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agendar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/verificarFecha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <marker date="1453670816409" expanded="true" signature="243:449" placeholder="select a.id_..agendamiento..." />
+            <marker date="1453670816409" expanded="true" signature="1007:1220" placeholder="select a.id_..agendamiento..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insertar_facturacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <marker date="1454653440731" expanded="true" signature="407:656" placeholder="select (sele..parametros..." />
+            <marker date="1454653440731" expanded="true" signature="415:490" placeholder="select max(v..parametros..." />
+            <marker date="1454653440731" expanded="true" signature="507:568" placeholder="select valor..parametros..." />
+            <marker date="1454653440731" expanded="true" signature="986:1078" placeholder="insert into factura_detalle..." />
+            <marker date="1454653440731" expanded="true" signature="1089:1148" placeholder="select max(i..factura_detalle..." />
+            <marker date="1454653440731" expanded="true" signature="1348:1558" placeholder="insert into factura_cabecera..." />
+            <marker date="1454653440731" expanded="true" signature="1633:1717" placeholder="update param..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/facturacion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -819,15 +890,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asd.php">
+    <entry file="file://$PROJECT_DIR$/Planificacion/Modificaciones en BD">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -835,19 +898,229 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modificar_medico.php">
+    <entry file="file://$PROJECT_DIR$/recuperar_medico.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        <state vertical-scroll-proportion="-11.129032">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding>
+            <marker date="1454218030772" expanded="true" signature="147:353" placeholder="select p.nom..persona..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/biblioteca/lib/class.soapclient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="156" column="13" selection-start-line="156" selection-start-column="13" selection-end-line="156" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicosServiceClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Planificacion/Planificacion">
+    <entry file="file://$PROJECT_DIR$/listado_personas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45373666">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <marker date="1454653440732" expanded="true" signature="632:828" placeholder="select p.ced..persona..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/45d35169-6442-4a49-98df-3b6da7d619db">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>45d35169-6442-4a49-98df-3b6da7d619db</OriginalElement>
+          <nodes>
+            <node x="1016.25" y="1510.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.aspecto</node>
+            <node x="376.0" y="94.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.cargos</node>
+            <node x="997.25" y="329.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_detalle</node>
+            <node x="1038.75" y="94.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_concepto</node>
+            <node x="533.8125" y="1717.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.antecedentes_familiares</node>
+            <node x="715.844135802469" y="987.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_detalle</node>
+            <node x="689.25" y="1456.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis</node>
+            <node x="1251.375" y="1510.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.desarrollo_gestacion</node>
+            <node x="456.75" y="604.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.agendamiento</node>
+            <node x="1005.844135802469" y="960.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.plan_de_tratamiento</node>
+            <node x="1142.875" y="1704.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.desarrollo_gestacion_pa</node>
+            <node x="550.25" y="396.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.modalidad</node>
+            <node x="762.25" y="369.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.sucursal</node>
+            <node x="465.25" y="1510.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.antecedentes</node>
+            <node x="864.1875" y="1704.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.aspectos_pa</node>
+            <node x="222.625" y="1704.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.historial_academico_pa</node>
+            <node x="1581.844135802469" y="0.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.usuario</node>
+            <node x="1145.094135802469" y="1208.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.diagnostico</node>
+            <node x="1003.75" y="617.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_cabecera</node>
+            <node x="42.0" y="0.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.persona</node>
+            <node x="0.0" y="987.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.paciente</node>
+            <node x="227.25" y="329.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.empleado</node>
+            <node x="673.094135802469" y="1221.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_cabecera</node>
+            <node x="1307.844135802469" y="1000.5">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.test_aplicado</node>
+            <node x="163.875" y="1510.0">45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.historial_academico</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.agendamiento" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.sucursal">
+              <point x="126.33333333333337" y="-153.0" />
+              <point x="772.5833333333334" y="579.0" />
+              <point x="869.75" y="579.0" />
+              <point x="0.0" y="72.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.desarrollo_gestacion_pa" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.desarrollo_gestacion">
+              <point x="67.0" y="-85.5" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.agendamiento" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.modalidad">
+              <point x="0.0" y="-153.0" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.empleado" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.cargos">
+              <point x="75.75" y="-112.5" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.aspectos_pa" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.aspecto">
+              <point x="63.75" y="-85.5" />
+              <point x="1055.4375" y="1684.0" />
+              <point x="1102.25" y="1684.0" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.historial_academico_pa" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.historial_academico">
+              <point x="-68.75" y="-85.5" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.antecedentes_familiares" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis">
+              <point x="76.0" y="-72.0" />
+              <point x="761.8125" y="1684.0" />
+              <point x="804.375" y="1684.0" />
+              <point x="-38.375" y="99.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_cabecera" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_detalle">
+              <point x="59.25" y="-85.5" />
+              <point x="0.0" y="72.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.paciente" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.persona">
+              <point x="0.0" y="-72.0" />
+              <point x="-78.5" y="139.5" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_cabecera">
+              <point x="0.0" y="-99.0" />
+              <point x="842.75" y="1431.0" />
+              <point x="791.594135802469" y="1431.0" />
+              <point x="0.0" y="85.5" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_detalle" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_cabecera">
+              <point x="67.5" y="-72.0" />
+              <point x="918.344135802469" y="935.0" />
+              <point x="1157.75" y="935.0" />
+              <point x="0.0" y="139.5" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.agendamiento" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.empleado">
+              <point x="-126.33333333333326" y="-153.0" />
+              <point x="519.9166666666667" y="579.0" />
+              <point x="378.75" y="579.0" />
+              <point x="0.0" y="112.5" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.empleado" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.persona">
+              <point x="-75.75" y="-112.5" />
+              <point x="303.0" y="304.0" />
+              <point x="277.5" y="304.0" />
+              <point x="78.5" y="139.5" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_detalle" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.agendamiento">
+              <point x="-67.5" y="-72.0" />
+              <point x="783.344135802469" y="935.0" />
+              <point x="646.25" y="935.0" />
+              <point x="0.0" y="153.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.diagnostico" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.plan_de_tratamiento">
+              <point x="-69.75" y="-99.0" />
+              <point x="1214.844135802469" y="1183.0" />
+              <point x="1146.844135802469" y="1183.0" />
+              <point x="0.0" y="99.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.desarrollo_gestacion_pa" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis">
+              <point x="-67.0" y="-85.5" />
+              <point x="1209.875" y="1674.0" />
+              <point x="957.875" y="1674.0" />
+              <point x="115.125" y="99.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_detalle" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_concepto">
+              <point x="0.0" y="-112.5" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.consulta_cabecera" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.paciente">
+              <point x="-59.25" y="-85.5" />
+              <point x="732.344135802469" y="1183.0" />
+              <point x="180.75" y="1183.0" />
+              <point x="60.25" y="72.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.historial_academico_pa" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis">
+              <point x="68.75" y="-85.5" />
+              <point x="428.875" y="1684.0" />
+              <point x="727.625" y="1684.0" />
+              <point x="-115.125" y="99.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.aspectos_pa" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis">
+              <point x="-63.75" y="-85.5" />
+              <point x="927.9375" y="1684.0" />
+              <point x="881.125" y="1684.0" />
+              <point x="38.375" y="99.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.paciente">
+              <point x="-102.33333333333326" y="-99.0" />
+              <point x="740.4166666666667" y="1431.0" />
+              <point x="60.25" y="1431.0" />
+              <point x="-60.25" y="72.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.diagnostico" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.test_aplicado">
+              <point x="69.75" y="-99.0" />
+              <point x="1354.344135802469" y="1183.0" />
+              <point x="1422.344135802469" y="1183.0" />
+              <point x="0.0" y="58.5" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.antecedentes_familiares" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.antecedentes">
+              <point x="-76.0" y="-72.0" />
+              <point x="609.8125" y="1674.0" />
+              <point x="567.25" y="1674.0" />
+              <point x="0.0" y="45.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.anamnesis" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.diagnostico">
+              <point x="102.33333333333337" y="-99.0" />
+              <point x="945.0833333333334" y="1431.0" />
+              <point x="1284.594135802469" y="1431.0" />
+              <point x="0.0" y="99.0" />
+            </edge>
+            <edge source="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_cabecera" target="45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.factura_detalle">
+              <point x="0.0" y="-139.5" />
+              <point x="0.0" y="112.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.8440633245382585" x="878.0" y="1537.0" />
+          <SelectedNodes>
+            <node>45d35169-6442-4a49-98df-3b6da7d619db.TABLE:psalud.public.desarrollo_gestacion_pa</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/medicosServiceServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32721713">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <marker date="1454895440920" expanded="true" signature="372:568" placeholder="select p.ced..persona..." />
+          </folding>
         </state>
       </provider>
     </entry>
