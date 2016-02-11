@@ -39,7 +39,8 @@
 
                     if (data.cedula2 == "No existe")
                     {
-                        alert ('No se ha encontrado medico con ese numero de cedula');
+                        a
+                            . lert ('No se ha encontrado medico con ese numero de cedula');
                     }
                     else
                     {
