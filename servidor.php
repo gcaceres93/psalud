@@ -66,7 +66,7 @@ $server->register('verificar_persona',
 
 
 $server->register('facturar',
-    array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time','direccion'=>'xsd:string','cantidadH'=>'xsd:integer','iva'=>'xsd:long','total'=>'xsd:long','usuario'=>'xsd:string'),
+    array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time','direccion'=>'xsd:string','cantidadH'=>'xsd:integer','iva'=>'xsd:numeric','total'=>'xsd:numeric','usuario'=>'xsd:string'),
     array ('return'=>'xsd:string'),
     'urn:Servidor',
     'urn:Servidor',
@@ -77,9 +77,16 @@ $server->register('facturar',
 
 function facturar ($cedulaP,$cedulaM,$fecha,$horario,$direccion,$cantidadH,$iva,$total,$usuario){
 
+    include_once 'biblioteca/conexionBd.php';
+    $recursoDeConexion = conectar('postgresql');
+
+
     $q="select (select max(valor_numero)  from parametros where nombre='ultimo_nro_factura') as ult_fact , (select valor_numero from parametros where nombre = 'timbrado') as timbrado, valor_fecha as vtim from parametros where nombre = 'vencimiento_timbrado'";
 
+
+
     $res=ejecutarQueryPostgreSql($recursoDeConexion,$q);
+
 
     while ($row = pg_fetch_assoc($res) ) {
         $factura_nro = $row["ult_fact"];
@@ -118,7 +125,7 @@ function facturar ($cedulaP,$cedulaM,$fecha,$horario,$direccion,$cantidadH,$iva,
 
     $lq="update parametros set valor_numero='$factura_nro2' where nombre='ultimo_nro_factura'";
     $resuSet = ejecutarQueryPostgreSql($recursoDeConexion,$lq);
-    echo trim ('ok');
+    return trim ('ok');
 
 
 

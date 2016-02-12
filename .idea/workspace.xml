@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fb6b123-7a14-47bd-b0a4-d2e5cee6b5e6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insertar_facturacion.php" afterPath="$PROJECT_DIR$/insertar_facturacion.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/servidor.php" afterPath="$PROJECT_DIR$/servidor.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -75,22 +76,22 @@
         <entry file="file://$PROJECT_DIR$/servidor.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.9493294">
-              <caret line="230" column="2" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
+              <caret line="237" column="2" selection-start-line="237" selection-start-column="2" selection-end-line="237" selection-end-column="2" />
               <folding>
-                <marker date="1455249196082" expanded="true" signature="2054:2303" placeholder="select (sele..parametros..." />
-                <marker date="1455249196082" expanded="true" signature="2062:2137" placeholder="select max(v..parametros..." />
-                <marker date="1455249196082" expanded="true" signature="2154:2215" placeholder="select valor..parametros..." />
-                <marker date="1455249196082" expanded="true" signature="2677:2769" placeholder="insert into ..." />
-                <marker date="1455249196082" expanded="true" signature="2784:2843" placeholder="select max(i..factura_detalle..." />
-                <marker date="1455249196082" expanded="true" signature="3067:3277" placeholder="insert into ..." />
-                <marker date="1455249196082" expanded="true" signature="3360:3444" placeholder="update param..." />
-                <marker date="1455249196082" expanded="true" signature="3685:3738" placeholder="select cedul..persona..." />
-                <marker date="1455249196082" expanded="true" signature="4213:4378" placeholder="insert into ..." />
-                <marker date="1455249196082" expanded="true" signature="4465:4519" placeholder="select id_pe..persona..." />
-                <marker date="1455249196082" expanded="true" signature="4917:4995" placeholder="insert into ..." />
-                <marker date="1455249196082" expanded="true" signature="5179:5341" placeholder="insert into ..." />
-                <marker date="1455249196082" expanded="true" signature="5606:5725" placeholder="select p.nom..paciente..." />
-                <marker date="1455249196082" expanded="true" signature="6284:6441" placeholder="select e.cod..empleado..." />
+                <marker date="1455250342960" expanded="true" signature="2157:2406" placeholder="select (sele..parametros..." />
+                <marker date="1455250342960" expanded="true" signature="2165:2240" placeholder="select max(v..parametros..." />
+                <marker date="1455250342960" expanded="true" signature="2257:2318" placeholder="select valor..parametros..." />
+                <marker date="1455250342960" expanded="true" signature="2783:2875" placeholder="insert into ..." />
+                <marker date="1455250342960" expanded="true" signature="2890:2949" placeholder="select max(i..factura_detalle..." />
+                <marker date="1455250342960" expanded="true" signature="3173:3383" placeholder="insert into ..." />
+                <marker date="1455250342960" expanded="true" signature="3466:3550" placeholder="update param..." />
+                <marker date="1455250342960" expanded="true" signature="3793:3846" placeholder="select cedul..persona..." />
+                <marker date="1455250342960" expanded="true" signature="4321:4486" placeholder="insert into ..." />
+                <marker date="1455250342960" expanded="true" signature="4573:4627" placeholder="select id_pe..persona..." />
+                <marker date="1455250342960" expanded="true" signature="5025:5103" placeholder="insert into ..." />
+                <marker date="1455250342960" expanded="true" signature="5287:5449" placeholder="insert into ..." />
+                <marker date="1455250342960" expanded="true" signature="5714:5833" placeholder="select p.nom..paciente..." />
+                <marker date="1455250342960" expanded="true" signature="6392:6549" placeholder="select e.cod..empleado..." />
               </folding>
             </state>
           </provider>
@@ -99,17 +100,9 @@
       <file leaf-file-name="insertar_facturacion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insertar_facturacion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.192308">
-              <caret line="59" column="17" selection-start-line="18" selection-start-column="0" selection-end-line="59" selection-end-column="17" />
-              <folding>
-                <marker date="1454642542196" expanded="true" signature="407:656" placeholder="select (sele..parametros..." />
-                <marker date="1454642542196" expanded="true" signature="415:490" placeholder="select max(v..parametros..." />
-                <marker date="1454642542196" expanded="true" signature="507:568" placeholder="select valor..parametros..." />
-                <marker date="1454642542196" expanded="true" signature="986:1078" placeholder="insert into ..." />
-                <marker date="1454642542196" expanded="true" signature="1089:1148" placeholder="select max(i..factura_detalle..." />
-                <marker date="1454642542196" expanded="true" signature="1348:1558" placeholder="insert into ..." />
-                <marker date="1454642542196" expanded="true" signature="1633:1717" placeholder="update param..." />
-              </folding>
+            <state vertical-scroll-proportion="-14.384615">
+              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -197,7 +190,6 @@
         <option value="$PROJECT_DIR$/modificar_medico.php" />
         <option value="$PROJECT_DIR$/Planificacion/Planificacion" />
         <option value="$PROJECT_DIR$/agendaService.php" />
-        <option value="$PROJECT_DIR$/insertar_facturacion.php" />
         <option value="$PROJECT_DIR$/medicosService.php" />
         <option value="$PROJECT_DIR$/medicos.wsdl" />
         <option value="$PROJECT_DIR$/MedicosServiceClient.php" />
@@ -206,6 +198,7 @@
         <option value="$PROJECT_DIR$/buscarPaciente.php" />
         <option value="$PROJECT_DIR$/buscarMedico.php" />
         <option value="$PROJECT_DIR$/insertar_persona.php" />
+        <option value="$PROJECT_DIR$/insertar_facturacion.php" />
         <option value="$PROJECT_DIR$/servidor.php" />
       </list>
     </option>
@@ -456,7 +449,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455166543767</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="se agrego verificar_persona en web service">
+      <created>1455249217590</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1455249217590</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -541,7 +540,8 @@
     <MESSAGE value="Estoy comitteando facturacion 56" />
     <MESSAGE value="Merge branch 'master' of https://github.com/gcaceres93/psalud&#10;&#10;# Conflicts:&#10;#&#9;.idea/dataSources.xml&#10;#&#9;.idea/workspace.xml&#10;" />
     <MESSAGE value="se agrega insertar paciente en web service" />
-    <option name="LAST_COMMIT_MESSAGE" value="se agrega insertar paciente en web service" />
+    <MESSAGE value="se agrego verificar_persona en web service" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrego verificar_persona en web service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1109,22 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/insertar_facturacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.192308">
-          <caret line="59" column="17" selection-start-line="18" selection-start-column="0" selection-end-line="59" selection-end-column="17" />
-          <folding>
-            <marker date="1454642542196" expanded="true" signature="407:656" placeholder="select (sele..parametros..." />
-            <marker date="1454642542196" expanded="true" signature="415:490" placeholder="select max(v..parametros..." />
-            <marker date="1454642542196" expanded="true" signature="507:568" placeholder="select valor..parametros..." />
-            <marker date="1454642542196" expanded="true" signature="986:1078" placeholder="insert into ..." />
-            <marker date="1454642542196" expanded="true" signature="1089:1148" placeholder="select max(i..factura_detalle..." />
-            <marker date="1454642542196" expanded="true" signature="1348:1558" placeholder="insert into ..." />
-            <marker date="1454642542196" expanded="true" signature="1633:1717" placeholder="update param..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Planificacion/Planificacion">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1133,25 +1117,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/insertar_facturacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615">
+          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/servidor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9493294">
-          <caret line="230" column="2" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
+          <caret line="237" column="2" selection-start-line="237" selection-start-column="2" selection-end-line="237" selection-end-column="2" />
           <folding>
-            <marker date="1455249196082" expanded="true" signature="2054:2303" placeholder="select (sele..parametros..." />
-            <marker date="1455249196082" expanded="true" signature="2062:2137" placeholder="select max(v..parametros..." />
-            <marker date="1455249196082" expanded="true" signature="2154:2215" placeholder="select valor..parametros..." />
-            <marker date="1455249196082" expanded="true" signature="2677:2769" placeholder="insert into ..." />
-            <marker date="1455249196082" expanded="true" signature="2784:2843" placeholder="select max(i..factura_detalle..." />
-            <marker date="1455249196082" expanded="true" signature="3067:3277" placeholder="insert into ..." />
-            <marker date="1455249196082" expanded="true" signature="3360:3444" placeholder="update param..." />
-            <marker date="1455249196082" expanded="true" signature="3685:3738" placeholder="select cedul..persona..." />
-            <marker date="1455249196082" expanded="true" signature="4213:4378" placeholder="insert into ..." />
-            <marker date="1455249196082" expanded="true" signature="4465:4519" placeholder="select id_pe..persona..." />
-            <marker date="1455249196082" expanded="true" signature="4917:4995" placeholder="insert into ..." />
-            <marker date="1455249196082" expanded="true" signature="5179:5341" placeholder="insert into ..." />
-            <marker date="1455249196082" expanded="true" signature="5606:5725" placeholder="select p.nom..paciente..." />
-            <marker date="1455249196082" expanded="true" signature="6284:6441" placeholder="select e.cod..empleado..." />
+            <marker date="1455250342960" expanded="true" signature="2157:2406" placeholder="select (sele..parametros..." />
+            <marker date="1455250342960" expanded="true" signature="2165:2240" placeholder="select max(v..parametros..." />
+            <marker date="1455250342960" expanded="true" signature="2257:2318" placeholder="select valor..parametros..." />
+            <marker date="1455250342960" expanded="true" signature="2783:2875" placeholder="insert into ..." />
+            <marker date="1455250342960" expanded="true" signature="2890:2949" placeholder="select max(i..factura_detalle..." />
+            <marker date="1455250342960" expanded="true" signature="3173:3383" placeholder="insert into ..." />
+            <marker date="1455250342960" expanded="true" signature="3466:3550" placeholder="update param..." />
+            <marker date="1455250342960" expanded="true" signature="3793:3846" placeholder="select cedul..persona..." />
+            <marker date="1455250342960" expanded="true" signature="4321:4486" placeholder="insert into ..." />
+            <marker date="1455250342960" expanded="true" signature="4573:4627" placeholder="select id_pe..persona..." />
+            <marker date="1455250342960" expanded="true" signature="5025:5103" placeholder="insert into ..." />
+            <marker date="1455250342960" expanded="true" signature="5287:5449" placeholder="insert into ..." />
+            <marker date="1455250342960" expanded="true" signature="5714:5833" placeholder="select p.nom..paciente..." />
+            <marker date="1455250342960" expanded="true" signature="6392:6549" placeholder="select e.cod..empleado..." />
           </folding>
         </state>
       </provider>
