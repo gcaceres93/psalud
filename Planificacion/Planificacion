@@ -4,8 +4,8 @@ Lucas:
 * Facturacion
 * Registrar ficha de paciente
 Leo:
-* Listar personas y reportes de consultas de los pacientes
-* ABM y listado usuarios (tiene que manejarse permisos por usuario)
+* Listar personas y reportes de consultas de los pacientes OK
+* ABM y listado usuarios (tiene que manejarse permisos por usuario) OK
 * Reporte de consultas de un dia, semana y mes especificos.
 Gabriel:
 * Agendar consulta
