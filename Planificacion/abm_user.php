@@ -112,7 +112,7 @@ if(isset($_SESSION['usuario'])){
 <div style="text-align:center;">
 	<fieldset style="display: inline-block;">
 		<div class="container">
-			<h2>Ingresar datos del Usuario <img src="user-add.png"
+			<h2>Agregar Usuario <img src="user-add.png"
 												 height="64px" width="64px"></h2>
 
 			<div class="form-horizontal">
@@ -125,54 +125,31 @@ if(isset($_SESSION['usuario'])){
                    </div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-xs-3">Nombre:</label>
+					<label class="control-label col-xs-3">Usuario:</label>
 
 					<div class="col-xs-9">
-						<input type="text" class="form-control" placeholder="Nombre" id="nombre">
+						<input type="text" class="form-control" placeholder="Usuario" id="usuario">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-xs-3">Apellido:</label>
+					<label class="control-label col-xs-3">Ingrese contraseña:</label>
 
 					<div class="col-xs-9">
-						<input type="text" class="form-control" placeholder="Apellido" id="apellido">
+						<input type="password" class="form-control" placeholder="Ingrese contraseña" id="ingrese_contraseña">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-xs-3">Email:</label>
+					<label class="control-label col-xs-3">Confirme contraseña:</label>
 
 					<div class="col-xs-9">
-						<input type="email" class="form-control" id="email" placeholder="Email" name="email">
+						<input type="password" class="form-control" id="confirme_contraseña" placeholder="Confirme contraseña" name="confirme_contraseña">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-xs-3">Telefono:</label>
+					<label class="control-label col-xs-3">Rol:</label>
 
 					<div class="col-xs-9">
-						<input type="tel" class="form-control" placeholder="Telefono" name="telefono" id='telefono'>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-xs-3">RUC:</label>
-
-					<div class="col-xs-9">
-						<input type="tel" class="form-control" placeholder="RUC" name="ruc" id='ruc'>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-xs-3">Fecha Nacimiento:</label>
-
-					<div class="col-xs-9">
-						<input type="date" class="form-control" placeholder="Fecha de Nacimiento" name="fecha"
-							   id='fecha_nacimiento'>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-xs-3">Dirección:</label>
-
-					<div class="col-xs-9">
-						<textarea rows="3" class="form-control" placeholder="Dirección" name="direccion"
-								  id='direccion'></textarea>
+						<input type="text" class="form-control" placeholder="Rol" name="rol" id='rol'>
 					</div>
 				</div>
 
