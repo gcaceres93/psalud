@@ -3,17 +3,20 @@
 
 
 
-require_once ('nusoap/lib/nusoap.php');
+require_once ('biblioteca/lib/nusoap.php');
 
 
 
 //Create a new soap server
 $server = new soap_server();
-
+$URL       = "http:localhost:8020/psalud/servidor";
+$namespace = $URL . '?wsdl';
+//using soap_server to create server object
+$server    = new soap_server;
+$server->configureWSDL('servidor', $namespace);
 //Define our namespace
-$server->configureWSDL('urn:Servidor');
-$server->wsdl->schemaTargetNamespace = 'urn:Servidor';
-$server->wsdl->addComplexType(
+
+/*$server->wsdl->addComplexType(
     'Person',
     'complexType',
     'struct',
@@ -23,14 +26,14 @@ $server->wsdl->addComplexType(
         'id_user' => array('name' => 'id_user', 'type' => 'xsd:int'))
 );
 
-
+*/
 
 //first simple function
 $server->register ('insertar_persona',
     array ('cedula' => 'xsd:string', 'nombre' =>'xsd:string', 'apellido'=> 'xsd:string', 'ruc'=>'xsd:string','direccion'=>'xsd:string','email'=>'xsd:string','telefono'=>'xsd:string','fecha'=>'xsd:date','ventana'=>'xsd:string'),
     array ('return'=> 'xsd:string'),
-    'urn:Servidor.hello',   //namespace
-    'urn:Servidor.hello',  //soapaction
+    'urn:Servidor.insertar_persona',   //namespace
+    'urn:Servidor.insertar_persona',  //soapaction
     'rpc', // style
     'encoded', // use
     'Se inserta en personas');
@@ -39,8 +42,8 @@ $server->register ('insertar_persona',
 $server->register('recuperar_paciente',
     array('cedula' => 'xsd:string'),  //parameter
     array('return' => 'xsd:string'),  //output
-    'urn:Servidor.hello',   //namespace
-    'urn:Servidor.hello',  //soapaction
+    'urn:Servidor.recuperar_paciente',   //namespace
+    'urn:Servidor.recuperar_paciente',  //soapaction
     'rpc', // style
     'encoded', // use
     'Just say hello');
@@ -49,8 +52,8 @@ $server->register('recuperar_paciente',
 $server->register('recuperar_medico',
     array ('cedula'=>'xsd:string'),
     array ('return' => 'xsd:string'),
-    'urn:Servidor',
-    'urn:Servidor',
+    'urn:Servidor.recuperar_medico',
+    'urn:Servidor.recuperar_medico',
     'rpc',
     'encoded',
     'Recuperar');
@@ -58,8 +61,8 @@ $server->register('recuperar_medico',
 $server->register('verificar_persona',
     array ('cedula'=>'xsd:string'),
     array ('return' => 'xsd:boolean'),
-    'urn:Servidor',
-    'urn:Servidor',
+    'urn:Servidor.verificar_persona',
+    'urn:Servidor.verificar_persona',
     'rpc',
     'encoded',
     'Verificar');
@@ -68,8 +71,8 @@ $server->register('verificar_persona',
 $server->register('facturar',
     array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time','direccion'=>'xsd:string','cantidadH'=>'xsd:integer','iva'=>'xsd:numeric','total'=>'xsd:numeric','usuario'=>'xsd:string'),
     array ('return'=>'xsd:string'),
-    'urn:Servidor',
-    'urn:Servidor',
+    'urn:Servidor.facturar',
+    'urn:Servidor.facturar',
     'rpc',
     'encoded',
     'Facturar'
