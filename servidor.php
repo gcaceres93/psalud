@@ -42,8 +42,8 @@ $server->register ('insertar_persona',
 $server->register('insertar_anamnesis',
     array('cedula'=>'xsd:string','motivo_consulta'=>'xsd:string','antecedentes_familiares'=>'xsd:string','antecedentes_desarrollo'=>'xsd:string','aspectos_generales'=>'xsd:string','conclusiones'=>'xsd:string','observaciones'=>'xsd:string','plan_evaluacion'=>'xsd:string'),
     array ('return'=>'xsd:string'),
-    'urn:Servidor.insertar_anamneis',
-    'urn:Servidor.insertar_anamneis',
+    'urn:Servidor.insertar_anamnesis',
+    'urn:Servidor.insertar_anamnesis',
     'rpc','encoded','Se inserta el anamnesis');
 
 
@@ -86,12 +86,103 @@ $server->register('facturar',
     'Facturar'
 );
 
+$server->register('verificar_fecha',
+    array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time'),
+    array ('return'=>'xsd:array'),
+    'urn:Servidor.verificar_fecha',
+    'urn:Servidor.verificar_fecha',
+    'rpc',
+    'encoded',
+    'Verificar fecha'
+);
+
+
+$server->register('agendar',
+    array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time','comentario'=>'xsd:string'),
+    array ('return'=>'xsd:string'),
+    'urn:Servidor.verificar_fecha',
+    'urn:Servidor.verificar_fecha',
+    'rpc',
+    'encoded',
+    'Verificar fecha'
+);
+
+function agendar($cedulaP,$cedulaM,$fecha,$horario,$comentario){
+    include_once 'biblioteca/conexionBd.php';
+    $recursoDeConexion = conectar('postgresql');
+    $query1="select codigo from empleado,persona where empleado.id_persona = persona.id_persona and persona.cedula = '$cedulaM'";
+
+    $rs= ejecutarQueryPostgreSql($recursoDeConexion,$query1);
+    while ($row = pg_fetch_assoc($rs)) {
+        $codigo = $row["codigo"];
+    }
+    $fecha_actual=date("d/m/Y");
+    $query2="insert into agendamiento(id_modalidad,codigo,id_sucursal,fecha_programada,fecha_registro,hora_programada,comentario)
+		VALUES (1,'$codigo',1,'$fecha','$fecha_actual','$horario','$comentario')";
+    $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query2);
+    return 'ok';
+
+}
+
+
+
+
+function verificar_fecha($cedulaP,$cedulaM,$fecha,$horario){
+
+
+    include_once 'biblioteca/conexionBd.php';
+    $recursoDeConexion = conectar('postgresql');
+//Realizar Select
+
+    $query="select a.id_agendamiento from agendamiento as a, persona as p, empleado as e where  a.fecha_programada = '$fecha' and a.hora_programada = '$horario' and p.id_persona = e.id_persona and p.cedula = '$cedulaM'";
+    $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
+    $resultSet2 = pg_fetch_assoc($resultSet);
+    if ($resultSet2==false) {
+        $d = array('valor' => 'no');
+        return ($d);
+    } else {
+
+        $bandera = 'true';
+        $hora = mb_substr($horario,0,2)+1+':00';
+        $hora_seguerida = $hora.':00';
+        while ($bandera == 'true'){
+            if ($hora > 19 || $hora < 8){
+                $hora = 8;
+                $hora_seguerida = $hora.':00';
+            }
+            $fecha_sugerida = array
+            ("fecha" => $fecha,
+                "horario" => $hora_seguerida
+            );
+            $query="select a.id_agendamiento from agendamiento as a, persona as p, empleado as e where  a.fecha_programada = '$fecha' and a.hora_programada = '$hora_seguerida' and p.id_persona = e.id_persona and p.cedula = '$cedulaM'";
+            $rs = ejecutarQueryPostgreSql($recursoDeConexion,$query);
+            $rs2 = pg_fetch_assoc($rs);
+            if ($rs2==false) {
+                $bandera = 'false';
+            }else{
+                $hora = mb_substr($hora_seguerida,0,2)+1+':00';
+                $hora_seguerida = $hora.':00';
+                if ($hora >= 20){
+                    $dia = mb_substr($fecha,8,2) + 1;
+                    $fecha = mb_substr($fecha,0,8).$dia;
+                }
+            }
+        }
+    }
+    if ($bandera == 'false')
+        return ($fecha_sugerida);
+}
+
+
+
+
+
 function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$antecedentes_desarrollo,$aspectos_generales,$conclusiones,$observaciones,$plan_evaluacion)
 {
 
     include_once 'biblioteca/conexionBd.php';
     $recursoDeConexion = conectar('postgresql');
-    $exi = 0;
+
     $query = "select id_consulta as consul from consulta_cabecera where cedula='$cedula'  ";
 
     $resultado = ejecutarQueryPostgreSql($recursoDeConexion,$query);
@@ -101,7 +192,7 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
         $consulta = $row["consul"];
 
     }
-
+    $exi = '0';
 
     $q = "select cedula from anamnesis where cedula='$cedula'  ";
 
@@ -111,22 +202,22 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
     $rs2 = pg_fetch_assoc($rs);
 
     if ($rs2 == false) {
-        $exi = 0;
+        $exi = '0';
 
     } else {
-        $exi = 1;
+        $exi = '1';
 
     }
 
-    if ($exi == 1) {
+    if ($exi == '1') {
         $que = "update anamnesis set motivo_consulta='$motivo_consulta', antecedentes_familiares='$antecedentes_familiares',antecedentes_desarrollo = '$antecedentes_desarrollo',aspectos_generales = '$aspectos_generales',conclusiones = '$conclusiones',observaciones = '$observaciones',plan_evaluacion = '$plan_evaluacion' where cedula='$cedula'";
         $rset = ejecutarQueryPostgreSql($recursoDeConexion,$que);
-        return 'ok';
+        return utf8_encode('ok');
 
     } else{
         $que = "insert into  anamnesis  (id_consulta,cedula,motivo_consulta, antecedentes_familiares,antecedentes_desarrollo,aspectos_generales,conclusiones,observaciones,plan_evaluacion) values ('$consulta','$cedula','$motivo_consulta','$antecedentes_familiares','$antecedentes_desarrollo','$aspectos_generales','$conclusiones','$observaciones','$plan_evaluacion')";
         $rset = ejecutarQueryPostgreSql($recursoDeConexion,$que);
-        return 'ok';
+        return utf8_encode('ok');
     }
 
 
