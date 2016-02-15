@@ -24,6 +24,7 @@
 
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"> </script>
     <script>
+        var ced;
         function buscarPaci() {
             var cedula= $("#cedula").val();
 
@@ -33,13 +34,8 @@
                 url:"buscaranamnesis.php",
                 data:{'cedula':cedula},
                 success:function (data){
-                    if (data.cedula2 == "No existe")
+                    if (data.cedula2 == cedula)
                     {
-                        alert ('No se ha encontrado paciente con ese numero de cedula');
-                    }
-                    else
-                    {
-
                         $("#cedula").val(data.nombre);
                         $("#motivo_consultas").val(data.motivo_consultas);
                         $("#antecedentes_familiares").val(data.antecedentes_familiares);
@@ -50,47 +46,58 @@
                         $("#plan_evaluacion").val(data.plan_evaluacion);
                         $("#cedula").attr('disabled', 'disabled');
                     }
+                    else
+                    {
+
+                        $("#cedula").val(data);
+
+                    }
                 }
             });
         }
+
+
         $(document).ready(function(){
 
 
             $("#guardar").click(function(event){
 
-                var nombre= $("#nombre").val();
-                var apellido=$("#apellido").val();
-                var cedula=$("#cedula").val();
-                var fecha=$("#fecha_nacimiento").val();
-                var ruc=$("#ruc").val();
-                var telefono=$("#telefono").val();
-                var email=$("#email").val();
-                var direccion=$("#direccion").val();
+                var cedula= $("#cedula").val();
+
+                var motivo_consultas=$("#motivo_consultas").val();
+                var antecedentes_familiares=$("#antecedentes_familiares").val();
+                var antecedentes_desarrollo=$("#antecedentes_desarrollo").val();
+                var aspectos_generales=$("#aspectos_generales").val();
+                var conclusiones=$("#conclusiones").val();
+                var observaciones=$("#observaciones").val();
+                var plan_evaluacion=$("#plan_evaluacion").val();
                 var ventana='paciente';
 
 
                 var datos={
-                    'nombre': nombre,
-                    'apellido': apellido,
-                    'cedula' : cedula,
-                    'fecha' : fecha,
-                    'ruc' : ruc,
-                    'telefono': telefono,
-                    'email': email,
-                    'direccion':direccion,
+                    'cedula': cedula,
+                    'motivo_consulta': motivo_consultas,
+                    'antecedentes_familiares' : antecedentes_familiares,
+                    'antecedentes_desarollo' : antecedentes_desarrollo,
+                    'aspectos_generales' : aspectos_generales,
+                    'conclusiones': conclusiones,
+                    'observaciones': observaciones,
+                    'plan_evaluacion':plan_evaluacion,
                     'ventana':ventana
                 };
 
                 $.ajax({
                     type:"post",
-                    url:"insertar_usuario.php",
+                    url:"insertar_anamnesis.php",
                     data: datos,
                     success:function (data){
-                        if (data == "ok"){
 
-                            window.location = 'home.php';
+                        if (data == "ok2"){
+
+                            alert ('ok');
 
                         }    else{
+
                             $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
                         }
                     }
@@ -135,7 +142,7 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Motivo de consulta:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="Motivo de consultas" name="motivo_consultas"
+                        <textarea  rows="10" class="form-control" placeholder="Motivo de consultas" name="motivo_consultas"
                                    id='motivo_consultas'></textarea>
                     </div>
                 </div>
@@ -144,8 +151,8 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Antecedentes familiares:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="Antecedentes familiares" name="antecedentes_familiares"
-                                  id='antecedentes_familiares'></textarea>
+                        <textarea  rows="10" class="form-control" placeholder="Antecedentes familiares" name="antecedentes_familiares"
+                                   id='antecedentes_familiares'></textarea>
                     </div>
                 </div>
 
@@ -153,8 +160,8 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Antecedentes desarrollo:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="Antecedentes desarrollo" name="antecedentes_desarrollo"
-                                  id='antecedentes_desarrollo'></textarea>
+                        <textarea  rows="10" class="form-control" placeholder="Antecedentes desarrollo" name="antecedentes_desarrollo"
+                                   id='antecedentes_desarrollo'></textarea>
                     </div>
                 </div>
 
@@ -162,8 +169,8 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Aspectos generales:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="Antecedentes generales" name="aspectos_generales"
-                                  id='aspectos_generales'></textarea>
+                        <textarea  rows="10" class="form-control" placeholder="Antecedentes generales" name="aspectos_generales"
+                                   id='aspectos_generales'></textarea>
                     </div>
                 </div>
 
@@ -171,8 +178,8 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Conclusiones:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="conclusiones" name="conclusiones"
-                                  id='conclusiones'></textarea>
+                        <textarea  rows="10" class="form-control" placeholder="conclusiones" name="conclusiones"
+                                   id='conclusiones'></textarea>
                     </div>
                 </div>
 
@@ -180,8 +187,8 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Observaciones:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="Observaciones" name="observaciones"
-                                  id='observaciones'></textarea>
+                        <textarea  rows="10" class="form-control" placeholder="Observaciones" name="observaciones"
+                                   id='observaciones'></textarea>
                     </div>
                 </div>
 
@@ -189,12 +196,18 @@ if(isset($_SESSION['usuario'])){
                     <label class="control-label col-xs-3">Plan de evaluacion:</label>
 
                     <div class="col-xs-9">
-                        <textarea disabled="disabled" rows="10" class="form-control" placeholder="Plan de evaluacion" name="plan_evaluacion"
-                                  id='plan_evaluacion'></textarea>
+                        <textarea  rows="10" class="form-control" placeholder="Plan de evaluacion" name="plan_evaluacion"
+                                   id='plan_evaluacion'></textarea>
                     </div>
                 </div>
                 <br>
+                <div class="form-group">
+                    <div class="col-xs-offset-3 col-xs-9">
 
+                        <input type="submit" class="btn btn-success" id="guardar" value="Guardar">
+                        <input type="reset" class="btn btn-default" value="Limpiar">
+                    </div>
+                </div>
 
             </div>
     </fieldset>
