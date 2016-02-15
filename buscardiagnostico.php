@@ -3,7 +3,24 @@ include_once 'biblioteca/conexionBd.php';
 $recursoDeConexion = conectar('postgresql');
 //Realizar Select
 $cedula = $_GET["cedula"];
-$query="select a.motivo_consulta as motivo_consultas,a.antecedentes_familiares, a.antecedentes_desarrollo, a.aspectos_generales, a.conclusiones, a.observaciones, a.plan_evaluacion, p.nombre, p.apellido from anamnesis a, persona p where a.cedula = '$cedula' and p.cedula= a.cedula";
+
+$q="select id_anamnesis from anamnesis where cedula='$cedula'";
+$res=ejecutarQueryPostgreSql($recursoDeConexion,$q);
+
+while ($row2=pg_fetch_assoc($res)){
+
+    $anam=$row2["id_anamnesis"];
+}
+$que="select nombre, apellido from persona where cedula='$cedula'";
+$resu=ejecutarQueryPostgreSql($recursoDeConexion,$que);
+
+while ($row3=pg_fetch_assoc($resu)){
+
+    $nomb=$row3["apellido"].','.$row3["nombre"];
+}
+
+
+$query="select id_anamnesis,resumen,procedimientos_utilizados,diagnostico_sindromes,diagnostico_nosografico,diagnostico_etiologico,diagnostico_patogenico,conclusion from diagnostico where id_anamnesis='$anam'";
 
 $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
 $resultSet2 = pg_fetch_assoc($resultSet);
@@ -28,7 +45,7 @@ if ($resultSet2==false) {
         $respuesta['diagnostico_etiologico'] = $row["diagnostico_etiologico"];
         $respuesta['diagnostico_patogenico'] = $row["diagnostico_patogenico"];
         $respuesta['conclusion'] = $row["conclusion"];
-        $respuesta['nombre'] = $row["apellido"].','.$row["nombre"];
+        $respuesta['nombre'] = $nomb;
         $respuesta['cedula2'] = $cedula;
     }
 

@@ -36,6 +36,7 @@
                 success:function (data){
                     if (data.cedula2 == cedula)
                     {
+                        window.ced=cedula;
                         $("#cedula").val(data.nombre);
                         $("#resumen").val(data.resumen);
                         $("#procedimientos_utilizados").val(data.procedimientos_utilizados);
@@ -48,7 +49,7 @@
                     }
                     else
                     {
-
+                        window.ced=cedula;
                         $("#cedula").val(data);
 
                     }
@@ -62,8 +63,8 @@
 
             $("#guardar").click(function(event){
 
-                var cedula= $("#cedula").val();
-
+                // var cedula= $("#cedula").val();
+                var cedula=window.ced;
                 var resumen=$("#resumen").val();
                 var procedimientos_utilizados=$("#procedimientos_utilizados").val();
                 var diagnostico_sindromes=$("#diagnostico_sindromes").val();
@@ -92,11 +93,12 @@
                     data: datos,
                     success:function (data){
 
-                        if (data == "ok2"){
+                        if (data == "ok"){
 
-                            alert ('ok');
+                            alert ('Se ha Grabado con Exito');
 
                         }    else{
+                            alert ('Error, Verifique que los datos sean correctos');
 
                             $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
                         }
@@ -127,7 +129,7 @@ if(isset($_SESSION['usuario'])){
     <fieldset style="display: inline-block;">
         <div class="container">
             <h2>Diagnostico del paciente <img src="user-add.png"
-                                            height="64px" width="64px"></h2>
+                                              height="64px" width="64px"></h2>
 
             <div class="form-horizontal">
                 <div class="form-group">

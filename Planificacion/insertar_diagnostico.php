@@ -16,7 +16,7 @@ $diagnostico_patogenico=$_POST["diagnostico_patogenico"];
 $conclusion=$_POST["conclusion"];
 
 
-$respuesta = $cliente->call('insertar_diagnostico',array('cedula'=>$cedula,'resumen'=>$resumen,'procedimientos_utilizados'=>$procedimientos_utilizados,'diagnostico_sindromes'=>$diagnostico_sindromes,'diagnostico_nosografico'=>$diagnostico_nosografico,'diagnostico_etiologico'=>$diagnostico_etiologico,'diagnostico_patogenico'=>$diagnostico_patogenico,'conclusion'=>$conclusion));
+$respuesta = $cliente->call('diagnostico',array('cedula'=>$cedula,'resumen'=>$resumen,'procedimientos_utilizados'=>$procedimientos_utilizados,'diagnostico_sindromes'=>$diagnostico_sindromes,'diagnostico_nosografico'=>$diagnostico_nosografico,'diagnostico_etiologico'=>$diagnostico_etiologico,'diagnostico_patogenico'=>$diagnostico_patogenico,'conclusion'=>$conclusion));
 $respuesta=utf8_encode($respuesta);
 echo ($respuesta);
 

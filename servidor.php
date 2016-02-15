@@ -88,7 +88,7 @@ $server->register('facturar',
 
 $server->register('verificar_fecha',
     array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time'),
-    array ('return'=>'xsd:array'),
+    array ('return'=>'xsd:string'),
     'urn:Servidor.verificar_fecha',
     'urn:Servidor.verificar_fecha',
     'rpc',
@@ -106,6 +106,47 @@ $server->register('agendar',
     'encoded',
     'Verificar fecha'
 );
+
+$server->register('diagnostico',
+    array ('cedula'=>'xsd:string','resumen'=>'xsd:string','procedimientos_utilizados'=>'xsd:string','diagnostico_sindromes'=>'xsd:string','diagnostico_nosografico'=>'xsd:string','diagnostico_etiologico'=>'xsd:string','diagnostico_patogenico'=>'xsd:string','conclusion'=>'xsd:string'),
+    array ('return' => 'xsd:string'),
+    'urn:Servidor.diagnostico',
+    'urn:Servidor.diagnostico',
+    'rpc',
+    'encoded',
+    'Diagnostico');
+
+function diagnostico ($cedula,$resumen,$procedimientos_utilizados,$diagnostico_sindromes,$diagnostico_nosografico,$diagnostico_etiologico,$diagnostico_patogenico,$conclusion) {
+    include_once 'biblioteca/conexionBd.php';
+    $recursoDeConexion = conectar('postgresql');
+    $query="select id_anamnesis from anamnesis where cedula='$cedula'";
+    $rs=ejecutarQueryPostgreSql($recursoDeConexion,$query);
+
+    while ($row=pg_fetch_assoc($rs)){
+
+        $anam=$row["id_anamnesis"];
+    }
+
+    $exi='0';
+
+    $que="select resumen from diagnostico where id_anamnesis=$anam";
+    $rs2=ejecutarQueryPostgreSql($recursoDeConexion,$que);
+
+    while ($row2=pg_fetch_assoc($rs2)){
+        $exi=$row2["resumen"];
+    }
+
+    if ($exi=='0'){
+        $q="insert into diagnostico (id_anamnesis,resumen,procedimientos_utilizados,diagnostico_sindromes,diagnostico_nosografico,diagnostico_etiologico,diagnostico_patogenico,conclusion) values ('$anam','$resumen','$procedimientos_utilizados','$diagnostico_sindromes','$diagnostico_nosografico','$diagnostico_etiologico','$diagnostico_patogenico','$conclusion')";
+        $resultset=ejecutarQueryPostgreSql($recursoDeConexion,$q);
+        return 'ok';}
+    else {
+        $q="update diagnostico set resumen='$resumen', procedimientos_utilizados='$procedimientos_utilizados',diagnostico_sindromes='$diagnostico_sindromes',diagnostico_nosografico='$diagnostico_nosografico',diagnostico_etiologico='$diagnostico_patogenico',conclusion='$conclusion' where id_anamnesis='$anam'";
+        $resultset=ejecutarQueryPostgreSql($recursoDeConexion,$q);
+        return 'ok';
+    }
+}
+
 
 function agendar($cedulaP,$cedulaM,$fecha,$horario,$comentario){
     include_once 'biblioteca/conexionBd.php';
