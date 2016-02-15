@@ -9,7 +9,7 @@ require_once ('biblioteca/lib/nusoap.php');
 
 //Create a new soap server
 $server = new soap_server();
-$URL       = "http:localhost:8020/psalud/servidor";
+$URL       = "http:localhost:80/servidor";
 $namespace = $URL . '?wsdl';
 //using soap_server to create server object
 $server    = new soap_server;
@@ -92,13 +92,13 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
     include_once 'biblioteca/conexionBd.php';
     $recursoDeConexion = conectar('postgresql');
     $exi = 0;
-    $query = "select id_consulta from consulta_cabecera where cedula='$cedula'  ";
+    $query = "select id_consulta as consul from consulta_cabecera where cedula='$cedula'  ";
 
-    $resultado = "ejecutarQueryPostgreSql($recursoDeConexion,$query)";
+    $resultado = ejecutarQueryPostgreSql($recursoDeConexion,$query);
 
     while ($row = pg_fetch_assoc($resultado)) {
 
-        $consulta = $row['id_consulta'];
+        $consulta = $row["consul"];
 
     }
 
@@ -106,7 +106,7 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
     $q = "select cedula from anamnesis where cedula='$cedula'  ";
 
 
-    $rs = "ejecutarQueryPostgreSql($recursoDeConexion,$q)";
+    $rs = ejecutarQueryPostgreSql($recursoDeConexion,$q);
 
     $rs2 = pg_fetch_assoc($rs);
 
@@ -120,16 +120,14 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
 
     if ($exi == 1) {
         $que = "update anamnesis set motivo_consulta='$motivo_consulta', antecedentes_familiares='$antecedentes_familiares',antecedentes_desarrollo = '$antecedentes_desarrollo',aspectos_generales = '$aspectos_generales',conclusiones = '$conclusiones',observaciones = '$observaciones',plan_evaluacion = '$plan_evaluacion' where cedula='$cedula'";
-        $rset = "ejecutarQueryPostgreSql($recursoDeConexion,$que)";
+        $rset = ejecutarQueryPostgreSql($recursoDeConexion,$que);
         return 'ok';
 
     } else{
-        $que = "insert into  anamnesis  (id_consulta,cedula,motivo_consulta, antecedentes_familiares,antecedentes_desarrollo,aspectos_generales,conclusiones,observaciones,plan_evaluacion) values '$consulta','$cedula','$motivo_consulta','$antecedentes_familiares','$antecedentes_desarrollo','$aspectos_generales','$conclusiones','$observaciones','$plan_evaluacion'";
-        $rset = "ejecutarQueryPostgreSql($recursoDeConexion,$que)";
-        return 'ok2';
+        $que = "insert into  anamnesis  (id_consulta,cedula,motivo_consulta, antecedentes_familiares,antecedentes_desarrollo,aspectos_generales,conclusiones,observaciones,plan_evaluacion) values ('$consulta','$cedula','$motivo_consulta','$antecedentes_familiares','$antecedentes_desarrollo','$aspectos_generales','$conclusiones','$observaciones','$plan_evaluacion')";
+        $rset = ejecutarQueryPostgreSql($recursoDeConexion,$que);
+        return 'ok';
     }
-
-
 
 
 }

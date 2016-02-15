@@ -25,33 +25,6 @@
       <index name="agendamiento_pk" unique="true" columns="id_agendamiento"/>
       <index name="relationship_6_fk" unique="false" columns="id_modalidad"/>
     </table>
-    <table name="agendamiento_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_agendamiento" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYWdlbmRhbWllbnRvX2F1ZF9pZF9hZ2VuZGFtaWVudG9fc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="id_modalidad" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="codigo" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="id_sucursal" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="fecha_programada" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="fecha_registro" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="empleado_registro" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="comentario" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="asistio" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="agendamiento_aud_id_agendamiento_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
     <table name="agendamiento_id_agendamiento_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -65,208 +38,22 @@
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="anamnesis" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="id_diagnostico" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_anamnesis" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="id_consulta" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="cedula" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="motivo" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
+      <column name="motivo_consulta" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="antecedentes_familiares" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="antecedentes_desarrollo" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="aspectos_generales" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="conclusiones" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="observaciones" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="plan_evaluacion" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="pk_anamnesis" columns="id_anamnesis"/>
       <foreign-key name="fk_anamnesi_relations_consulta" columns="id_consulta" ref-table="consulta_cabecera" ref-schema="public" ref-catalog="" ref-columns="id_consulta" update-rule="1" delete-rule="1" deferrability="2"/>
-      <foreign-key name="fk_anamnesi_relations_diagnost" columns="id_diagnostico" ref-table="diagnostico" ref-schema="public" ref-catalog="" ref-columns="id_diagnostico" update-rule="1" delete-rule="1" deferrability="2"/>
       <foreign-key name="fk_anamnesi_relations_paciente" columns="cedula" ref-table="paciente" ref-schema="public" ref-catalog="" ref-columns="cedula" update-rule="1" delete-rule="1" deferrability="2"/>
-      <exported-key name="fk_antecede_relations_anamnesi" table="antecedentes_familiares" schema="public" catalog="psalud" columns="id_anamnesis"/>
-      <exported-key name="fk_aspectos_relations_anamnesi" table="aspectos_pa" schema="public" catalog="psalud" columns="id_anamnesis"/>
-      <exported-key name="fk_desarrol_relations_anamnesi" table="desarrollo_gestacion_pa" schema="public" catalog="psalud" columns="id_anamnesis"/>
-      <exported-key name="fk_historia_relations_anamnesi" table="historial_academico_pa" schema="public" catalog="psalud" columns="id_anamnesis"/>
       <index name="anamnesis_pk" unique="true" columns="id_anamnesis"/>
       <index name="relationship_14_fk" unique="false" columns="id_consulta"/>
-      <index name="relationship_21_fk" unique="false" columns="id_diagnostico"/>
       <index name="relationship_25_fk" unique="false" columns="cedula"/>
-    </table>
-    <table name="anamnesis_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="id_diagnostico" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_consulta" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="cedula" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="motivo" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="antecedentes" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_antecedente" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYW50ZWNlZGVudGVzX2lkX2FudGVjZWRlbnRlX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_antecedentes" columns="id_antecedente"/>
-      <exported-key name="fk_antecede_relations_antecede" table="antecedentes_familiares" schema="public" catalog="psalud" columns="id_antecedente"/>
-      <index name="antecedentes_pk" unique="true" columns="id_antecedente"/>
-    </table>
-    <table name="antecedentes_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_antecedente" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYW50ZWNlZGVudGVzX2F1ZF9pZF9hbnRlY2VkZW50ZV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="antecedentes_aud_id_antecedente_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="antecedentes_familiares" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_antecedente_familiar" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYW50ZWNlZGVudGVzX2ZhbWlsaWFyZXNfaWRfYW50ZWNlZGVudGVfZmFtaWxpYXJfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="id_antecedente" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_antecedentes_familiares" columns="id_antecedente_familiar"/>
-      <foreign-key name="fk_antecede_relations_anamnesi" columns="id_anamnesis" ref-table="anamnesis" ref-schema="public" ref-catalog="" ref-columns="id_anamnesis" update-rule="1" delete-rule="1" deferrability="2"/>
-      <foreign-key name="fk_antecede_relations_antecede" columns="id_antecedente" ref-table="antecedentes" ref-schema="public" ref-catalog="" ref-columns="id_antecedente" update-rule="1" delete-rule="1" deferrability="2"/>
-      <index name="antecedentes_familiares_pk" unique="true" columns="id_antecedente_familiar"/>
-      <index name="relationship_15_fk" unique="false" columns="id_anamnesis"/>
-      <index name="relationship_31_fk" unique="false" columns="id_antecedente"/>
-    </table>
-    <table name="antecedentes_familiares_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_antecedente_familiar" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYW50ZWNlZGVudGVzX2ZhbWlsaWFyZXNfYXVkX2lkX2FudGVjZWRlbnRlX2ZhbWlsaWFyX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="id_antecedente" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="antecedentes_familiares_aud_id_antecedente_familiar_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="antecedentes_familiares_id_antecedente_familiar_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="antecedentes_id_antecedente_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="aspecto" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_aspecto" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYXNwZWN0b19pZF9hc3BlY3RvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_aspecto" columns="id_aspecto"/>
-      <exported-key name="fk_aspectos_relations_aspecto" table="aspectos_pa" schema="public" catalog="psalud" columns="id_aspecto"/>
-      <index name="aspecto_pk" unique="true" columns="id_aspecto"/>
-    </table>
-    <table name="aspecto_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_aspecto" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYXNwZWN0b19hdWRfaWRfYXNwZWN0b19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="aspecto_aud_id_aspecto_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="aspecto_id_aspecto_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="aspectos_pa" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_aspecto_pa" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYXNwZWN0b3NfcGFfaWRfYXNwZWN0b19wYV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="id_aspecto" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="activo" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_aspectos_pa" columns="id_aspecto_pa"/>
-      <foreign-key name="fk_aspectos_relations_anamnesi" columns="id_anamnesis" ref-table="anamnesis" ref-schema="public" ref-catalog="" ref-columns="id_anamnesis" update-rule="1" delete-rule="1" deferrability="2"/>
-      <foreign-key name="fk_aspectos_relations_aspecto" columns="id_aspecto" ref-table="aspecto" ref-schema="public" ref-catalog="" ref-columns="id_aspecto" update-rule="1" delete-rule="1" deferrability="2"/>
-      <index name="aspectos_pa_pk" unique="true" columns="id_aspecto_pa"/>
-      <index name="relationship_22_fk" unique="false" columns="id_anamnesis"/>
-      <index name="relationship_34_fk" unique="false" columns="id_aspecto"/>
-    </table>
-    <table name="aspectos_pa_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_aspecto_pa" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnYXNwZWN0b3NfcGFfYXVkX2lkX2FzcGVjdG9fcGFfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="id_aspecto" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="activo" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="aspectos_pa_aud_id_aspecto_pa_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="aspectos_pa_id_aspecto_pa_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="cargos" schema="public" catalog="psalud" type="TABLE">
       <column name="id_cargo" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY2FyZ29zX2lkX2NhcmdvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
@@ -301,29 +88,6 @@
       <index name="relationship_23_fk" unique="false" columns="cedula"/>
       <index name="relationship_26_fk" unique="false" columns="id_consulta_detalle"/>
     </table>
-    <table name="consulta_cabecera_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_consulta" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29uc3VsdGFfY2FiZWNlcmFfYXVkX2lkX2NvbnN1bHRhX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="cedula" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="id_consulta_detalle" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="observaciones" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="cantidad_sesiones" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="consulta_cabecera_aud_id_consulta_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
     <table name="consulta_cabecera_id_consulta_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -347,116 +111,7 @@
       <exported-key name="fk_consulta_relations_consulta" table="consulta_cabecera" schema="public" catalog="psalud" columns="id_consulta_detalle"/>
       <index name="consulta_detalle_pk" unique="true" columns="id_consulta_detalle"/>
     </table>
-    <table name="consulta_detalle_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_consulta_detalle" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnY29uc3VsdGFfZGV0YWxsZV9hdWRfaWRfY29uc3VsdGFfZGV0YWxsZV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="id_factura" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_agendamiento" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="consulta_detalle_aud_id_consulta_detalle_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
     <table name="consulta_detalle_id_consulta_detalle_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="desarrollo_gestacion" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_gestacion" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGVzYXJyb2xsb19nZXN0YWNpb25faWRfZ2VzdGFjaW9uX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_desarrollo_gestacion" columns="id_gestacion"/>
-      <exported-key name="fk_desarrol_relations_desarrol" table="desarrollo_gestacion_pa" schema="public" catalog="psalud" columns="id_gestacion"/>
-      <index name="desarrollo_gestacion_pk" unique="true" columns="id_gestacion"/>
-    </table>
-    <table name="desarrollo_gestacion_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_gestacion" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGVzYXJyb2xsb19nZXN0YWNpb25fYXVkX2lkX2dlc3RhY2lvbl9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="desarrollo_gestacion_aud_id_gestacion_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="desarrollo_gestacion_id_gestacion_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="desarrollo_gestacion_pa" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_gestacion_pa" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGVzYXJyb2xsb19nZXN0YWNpb25fcGFfaWRfZ2VzdGFjaW9uX3BhX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="id_gestacion" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="activo" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <primary-key name="pk_desarrollo_gestacion_pa" columns="id_gestacion_pa"/>
-      <foreign-key name="fk_desarrol_relations_anamnesi" columns="id_anamnesis" ref-table="anamnesis" ref-schema="public" ref-catalog="" ref-columns="id_anamnesis" update-rule="1" delete-rule="1" deferrability="2"/>
-      <foreign-key name="fk_desarrol_relations_desarrol" columns="id_gestacion" ref-table="desarrollo_gestacion" ref-schema="public" ref-catalog="" ref-columns="id_gestacion" update-rule="1" delete-rule="1" deferrability="2"/>
-      <index name="desarrollo_gestacion_pa_pk" unique="true" columns="id_gestacion_pa"/>
-      <index name="relationship_18_fk" unique="false" columns="id_anamnesis"/>
-      <index name="relationship_32_fk" unique="false" columns="id_gestacion"/>
-    </table>
-    <table name="desarrollo_gestacion_pa_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_gestacion_pa" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGVzYXJyb2xsb19nZXN0YWNpb25fcGFfYXVkX2lkX2dlc3RhY2lvbl9wYV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="id_gestacion" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="activo" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="desarrollo_gestacion_pa_aud_id_gestacion_pa_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="desarrollo_gestacion_pa_id_gestacion_pa_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -472,38 +127,17 @@
       <column name="id_diagnostico" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGlhZ25vc3RpY29faWRfZGlhZ25vc3RpY29fc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
       <column name="id_test_aplicado" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="id_tratamiento" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="observaciones" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="resultado_obtenido" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="acepta_tratamiento" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
+      <column name="resumen" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="procedimientos_utilizados" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="diagnostico_sindromes" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="diagnostico_nosografico" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="diagnostico_etiologico" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="diagnostico_patogenico" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="conclusion" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="pk_diagnostico" columns="id_diagnostico"/>
-      <foreign-key name="fk_diagnost_reference_plan_de_" columns="id_tratamiento" ref-table="plan_de_tratamiento" ref-schema="public" ref-catalog="" ref-columns="id_tratamiento" update-rule="1" delete-rule="1" deferrability="2"/>
       <foreign-key name="fk_diagnost_reference_test_apl" columns="id_test_aplicado" ref-table="test_aplicado" ref-schema="public" ref-catalog="" ref-columns="id_test_aplicado" update-rule="1" delete-rule="1" deferrability="2"/>
-      <exported-key name="fk_anamnesi_relations_diagnost" table="anamnesis" schema="public" catalog="psalud" columns="id_diagnostico"/>
+      <foreign-key name="fk_diagnost_reference_plan_de_" columns="id_tratamiento" ref-table="tratamiento" ref-schema="public" ref-catalog="" ref-columns="id_tratamiento" update-rule="1" delete-rule="1" deferrability="2"/>
       <index name="diagnostico_pk" unique="true" columns="id_diagnostico"/>
-    </table>
-    <table name="diagnostico_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_diagnostico" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZGlhZ25vc3RpY29fYXVkX2lkX2RpYWdub3N0aWNvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="id_test_aplicado" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_tratamiento" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="observaciones" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="resultado_obtenido" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="acepta_tratamiento" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="diagnostico_aud_id_diagnostico_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="diagnostico_id_diagnostico_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -532,16 +166,6 @@
       <index name="empleado_pk" unique="true" columns="codigo"/>
       <index name="empleado_persona_fk" unique="false" columns="id_persona"/>
     </table>
-    <table name="empleado_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_persona" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="codigo" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_cargo" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="apellido" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
     <table name="factura_cabecera" schema="public" catalog="psalud" type="TABLE">
       <column name="id_factura" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFjdHVyYV9jYWJlY2VyYV9pZF9mYWN0dXJhX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="id_factura_detalle" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -550,41 +174,13 @@
       <column name="timbrado" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
       <column name="vigencia_timbrado" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
       <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario" sqlType="varchar" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="usuario" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="tipo_pago" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
       <primary-key name="pk_factura_cabecera" columns="id_factura"/>
       <foreign-key name="fk_factura__relations_factura_" columns="id_factura_detalle" ref-table="factura_detalle" ref-schema="public" ref-catalog="" ref-columns="id_factura_detalle" update-rule="1" delete-rule="1" deferrability="2"/>
       <exported-key name="fk_consulta_reference_factura_" table="consulta_detalle" schema="public" catalog="psalud" columns="id_factura"/>
       <index name="factura_cabecera_pk" unique="true" columns="id_factura"/>
       <index name="relationship_17_fk" unique="false" columns="id_factura_detalle"/>
-    </table>
-    <table name="factura_cabecera_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_factura" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFjdHVyYV9jYWJlY2VyYV9hdWRfaWRfZmFjdHVyYV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="id_factura_detalle" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="nro" sqlType="varchar" precision="20" scale="0" nullable="true" jdbcType="12"/>
-      <column name="monto_total" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="timbrado" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="vigencia_timbrado" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="tipo_pago" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="factura_cabecera_aud_id_factura_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="factura_cabecera_id_factura_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -621,9 +217,9 @@
       <column name="id_factura_detalle" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFjdHVyYV9kZXRhbGxlX2lkX2ZhY3R1cmFfZGV0YWxsZV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="id_factura_concepto" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="iva5" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="iva10" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="iva10" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="gravada5" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="gravada10" sqlType="numeric" precision="131089" scale="0" nullable="true" jdbcType="2"/>
+      <column name="gravada10" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="exentas" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="pk_factura_detalle" columns="id_factura_detalle"/>
       <foreign-key name="fk_factura__relations_factura_" columns="id_factura_concepto" ref-table="factura_concepto" ref-schema="public" ref-catalog="" ref-columns="id_factura_concepto" update-rule="1" delete-rule="1" deferrability="2"/>
@@ -631,119 +227,7 @@
       <index name="factura_detalle_pk" unique="true" columns="id_factura_detalle"/>
       <index name="relationship_20_fk" unique="false" columns="id_factura_concepto"/>
     </table>
-    <table name="factura_detalle_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_factura_detalle" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnZmFjdHVyYV9kZXRhbGxlX2F1ZF9pZF9mYWN0dXJhX2RldGFsbGVfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="id_factura_concepto" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="iva5" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="iva10" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="gravada5" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="gravada10" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="exentas" sqlType="int8" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="factura_detalle_aud_id_factura_detalle_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
     <table name="factura_detalle_id_factura_detalle_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="historial_academico" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_historial_academico" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaGlzdG9yaWFsX2FjYWRlbWljb19pZF9oaXN0b3JpYWxfYWNhZGVtaWNvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_historial_academico" columns="id_historial_academico"/>
-      <exported-key name="fk_historia_relations_historia" table="historial_academico_pa" schema="public" catalog="psalud" columns="id_historial_academico"/>
-      <index name="historial_academico_pk" unique="true" columns="id_historial_academico"/>
-    </table>
-    <table name="historial_academico_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_historial_academico" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaGlzdG9yaWFsX2FjYWRlbWljb19hdWRfaWRfaGlzdG9yaWFsX2FjYWRlbWljb19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="historial_academico_aud_id_historial_academico_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="historial_academico_id_historial_academico_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="historial_academico_pa" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_academico_pa" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaGlzdG9yaWFsX2FjYWRlbWljb19wYV9pZF9hY2FkZW1pY29fcGFfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="id_historial_academico" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="activo" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <primary-key name="pk_historial_academico_pa" columns="id_academico_pa"/>
-      <foreign-key name="fk_historia_relations_anamnesi" columns="id_anamnesis" ref-table="anamnesis" ref-schema="public" ref-catalog="" ref-columns="id_anamnesis" update-rule="1" delete-rule="1" deferrability="2"/>
-      <foreign-key name="fk_historia_relations_historia" columns="id_historial_academico" ref-table="historial_academico" ref-schema="public" ref-catalog="" ref-columns="id_historial_academico" update-rule="1" delete-rule="1" deferrability="2"/>
-      <index name="historial_academico_pa_pk" unique="true" columns="id_academico_pa"/>
-      <index name="relationship_19_fk" unique="false" columns="id_anamnesis"/>
-      <index name="relationship_33_fk" unique="false" columns="id_historial_academico"/>
-    </table>
-    <table name="historial_academico_pa_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_academico_pa" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnaGlzdG9yaWFsX2FjYWRlbWljb19wYV9hdWRfaWRfYWNhZGVtaWNvX3BhX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="id_historial_academico" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="activo" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="historial_academico_pa_aud_id_academico_pa_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="historial_academico_pa_id_academico_pa_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -761,26 +245,6 @@
       <primary-key name="pk_modalidad" columns="id_modalidad"/>
       <exported-key name="fk_agendami_relations_modalida" table="agendamiento" schema="public" catalog="psalud" columns="id_modalidad"/>
       <index name="modalidad_pk" unique="true" columns="id_modalidad"/>
-    </table>
-    <table name="modalidad_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_modalidad" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbW9kYWxpZGFkX2F1ZF9pZF9tb2RhbGlkYWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="descripcion" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="modalidad_aud_id_modalidad_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="modalidad_id_modalidad_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -804,17 +268,6 @@
       <exported-key name="fk_anamnesi_relations_paciente" table="anamnesis" schema="public" catalog="psalud" columns="cedula"/>
       <exported-key name="fk_consulta_relations_paciente" table="consulta_cabecera" schema="public" catalog="psalud" columns="cedula"/>
       <index name="cliente_persona_fk" unique="false" columns="id_persona"/>
-    </table>
-    <table name="paciente_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_persona" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="cedula" sqlType="varchar" precision="20" scale="0" nullable="false" jdbcType="12"/>
-      <column name="id_anamnesis" sqlType="int2" precision="5" scale="0" nullable="false" jdbcType="5"/>
-      <column name="razon_social" sqlType="varchar" precision="150" scale="0" nullable="true" jdbcType="12"/>
-      <column name="ruc" sqlType="varchar" precision="100" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
     </table>
     <table name="parametros" schema="public" catalog="psalud" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncGFyYW1ldHJvc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
@@ -845,73 +298,12 @@
       <column name="email" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
       <column name="id_persona" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncGVyc29uYV9pZF9wZXJzb25hX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="cedula" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="ruc" sqlType="varchar" precision="25" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="pk_persona" columns="id_persona"/>
       <exported-key name="fk_empleado_empleado__persona" table="empleado" schema="public" catalog="psalud" columns="id_persona"/>
       <exported-key name="fk_paciente_cliente_p_persona" table="paciente" schema="public" catalog="psalud" columns="id_persona"/>
       <index name="persona_pk" unique="true" columns="id_persona"/>
     </table>
-    <table name="persona_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="nombre" sqlType="varchar" precision="300" scale="0" nullable="true" jdbcType="12"/>
-      <column name="apellido" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
-      <column name="nacimiento" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="telefono" sqlType="varchar" precision="40" scale="0" nullable="true" jdbcType="12"/>
-      <column name="direccion" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
-      <column name="email" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="id_persona" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncGVyc29uYV9hdWRfaWRfcGVyc29uYV9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="persona_aud_id_persona_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
     <table name="persona_id_persona_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
-    <table name="plan_de_tratamiento" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_tratamiento" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncGxhbl9kZV90cmF0YW1pZW50b19pZF90cmF0YW1pZW50b19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="fecha_inicio" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="fecha_final" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="cantidad_sesiones" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="alcance" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="resultados_esperados" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <primary-key name="pk_plan_de_tratamiento" columns="id_tratamiento"/>
-      <exported-key name="fk_diagnost_reference_plan_de_" table="diagnostico" schema="public" catalog="psalud" columns="id_tratamiento"/>
-      <index name="plan_de_tratamiento_pk" unique="true" columns="id_tratamiento"/>
-    </table>
-    <table name="plan_de_tratamiento_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_tratamiento" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncGxhbl9kZV90cmF0YW1pZW50b19hdWRfaWRfdHJhdGFtaWVudG9fc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="fecha_inicio" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="fecha_final" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="cantidad_sesiones" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
-      <column name="alcance" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="resultados_esperados" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="plan_de_tratamiento_aud_id_tratamiento_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -937,8 +329,9 @@
     </table>
     <table name="roles" schema="public" catalog="psalud" type="TABLE">
       <column name="rol" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncm9sZXNfcm9sX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="nombre" sqlType="varchar" precision="50" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="roles_pkey" columns="rol"/>
+      <column name="nombre" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="pk_rol" columns="rol"/>
+      <index name="rol_pk" unique="true" columns="rol"/>
     </table>
     <table name="roles_rol_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -961,28 +354,6 @@
       <exported-key name="fk_agendami_reference_sucursal" table="agendamiento" schema="public" catalog="psalud" columns="id_sucursal"/>
       <index name="sucursal_pk" unique="true" columns="id_sucursal"/>
     </table>
-    <table name="sucursal_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_sucursal" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3VjdXJzYWxfYXVkX2lkX3N1Y3Vyc2FsX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="nombre" sqlType="varchar" precision="300" scale="0" nullable="true" jdbcType="12"/>
-      <column name="direccion" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
-      <column name="telefono" sqlType="varchar" precision="40" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="sucursal_aud_id_sucursal_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-    </table>
     <table name="sucursal_id_sucursal_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
       <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
@@ -997,32 +368,11 @@
     </table>
     <table name="test_aplicado" schema="public" catalog="psalud" type="TABLE">
       <column name="id_test_aplicado" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGVzdF9hcGxpY2Fkb19pZF90ZXN0X2FwbGljYWRvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="resultado" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
+      <column name="resultado" sqlType="varchar" precision="1024" scale="0" nullable="true" jdbcType="12"/>
       <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="pk_test_aplicado" columns="id_test_aplicado"/>
       <exported-key name="fk_diagnost_reference_test_apl" table="diagnostico" schema="public" catalog="psalud" columns="id_test_aplicado"/>
       <index name="test_aplicado_pk" unique="true" columns="id_test_aplicado"/>
-    </table>
-    <table name="test_aplicado_aud" schema="public" catalog="psalud" type="TABLE">
-      <column name="id_test_aplicado" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndGVzdF9hcGxpY2Fkb19hdWRfaWRfdGVzdF9hcGxpY2Fkb19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="resultado" sqlType="varchar" precision="1" scale="0" nullable="true" jdbcType="12"/>
-      <column name="observacion" sqlType="varchar" precision="200" scale="0" nullable="true" jdbcType="12"/>
-      <column name="usuario_modificacion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="fecha_modificacion" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="momento" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-      <column name="accion" sqlType="varchar" precision="50" scale="0" nullable="true" jdbcType="12"/>
-    </table>
-    <table name="test_aplicado_aud_id_test_aplicado_seq" schema="public" catalog="psalud" type="SEQUENCE">
-      <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
-      <column name="last_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="start_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="increment_by" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="max_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="min_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="cache_value" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="log_cnt" sqlType="int8" precision="19" scale="0" nullable="false" jdbcType="-5"/>
-      <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
-      <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
     <table name="test_aplicado_id_test_aplicado_seq" schema="public" catalog="psalud" type="SEQUENCE">
       <column name="sequence_name" sqlType="name" precision="2147483647" scale="0" nullable="false" jdbcType="12"/>
@@ -1036,10 +386,24 @@
       <column name="is_cycled" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
       <column name="is_called" sqlType="bool" precision="1" scale="0" nullable="false" jdbcType="-7"/>
     </table>
+    <table name="tratamiento" schema="public" catalog="psalud" type="TABLE">
+      <column name="id_tratamiento" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncGxhbl9kZV90cmF0YW1pZW50b19pZF90cmF0YW1pZW50b19zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
+      <column name="fecha_inicio" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fecha_final" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
+      <column name="cantidad_sesiones" sqlType="int2" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="comentarios" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ultima_fecha_seguimiento" sqlType="date" precision="13" scale="0" nullable="false" jdbcType="91"/>
+      <column name="conclusion_final" sqlType="varchar" precision="1024" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="pk_plan_de_tratamiento" columns="id_tratamiento"/>
+      <exported-key name="fk_diagnost_reference_plan_de_" table="diagnostico" schema="public" catalog="psalud" columns="id_tratamiento"/>
+      <index name="plan_de_tratamiento_pk" unique="true" columns="id_tratamiento"/>
+    </table>
     <table name="usuario" schema="public" catalog="psalud" type="TABLE">
       <column name="usuario" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="pass" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="id_usuario" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgndXN1YXJpb19pZF91c3VhcmlvX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
+      <column name="rol" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_persona" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="usuario_pkey" columns="id_usuario"/>
     </table>
     <table name="usuario_id_usuario_seq" schema="public" catalog="psalud" type="SEQUENCE">

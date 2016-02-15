@@ -8,8 +8,13 @@ $query="select a.motivo_consulta as motivo_consultas,a.antecedentes_familiares, 
 $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
 $resultSet2 = pg_fetch_assoc($resultSet);
 if ($resultSet2==false) {
-    $respuesta = array();
-    $respuesta['cedula2'] = 'No existe';
+    include ('nusoap/lib/nusoap.php');
+
+    $cliente = new nusoap_client('http://localhost:80/servidor.php?wsdl');
+
+    $respuesta = $cliente->call('recuperar_paciente',array('cedula'=>$cedula));
+    $respuesta=utf8_encode($respuesta);
+
     echo json_encode ($respuesta);
 } else {
     $rs = ejecutarQueryPostgreSql($recursoDeConexion,$query);
