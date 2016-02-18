@@ -23,6 +23,8 @@
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"> </script>
 
 	<script type="text/javascript">
+
+		var user= 'asd';
 		function buscarMedico() {
 			var cedula= $("#cedulaMedico").val();
 			$.ajax({
@@ -49,7 +51,7 @@
 							window.open( "addpersona2.html?cedula="+cedula, "RegistrarPaciente", "status = 1, height = 600, width = 1100, resizable = 1, scrollbars=yes" )
 					}else{
 						$("#cedulaP").val(cedula);
-						$("#cedulaCliencte").val(data);
+						$("#cedulaCliente").val(data);
 						$("#cedulaCliente").attr('disabled', 'disabled');
 					}
 				}
@@ -74,6 +76,7 @@
 				success:function (data){
 					if (data.valor=="no"){
 						alert("La fecha y horario se encuentran disponibles");
+
 						$("#sugerencia").empty();
 					}else{
 						alert("La fecha y horario no se encuentran disponibles");
@@ -104,6 +107,7 @@
 
 
 			$("#guardar").click(function(event){
+
 				var cedulaP= $("#cedulaP").val();
 				var cedulaM= $("#cedulaM").val();
 				var fecha= $("#fecha").val();
@@ -129,7 +133,12 @@
 					data:datos,
 					success:function (data){
 						if (data=="ok"){
+							alert(window.user);
 							alert("Factura Guardada con Exito");
+							confirmar=confirm("Desea visualizar la factura para imprimir: ");
+							if (confirmar)
+								window.open( "fac/index.php" )
+
 
 						}else{
 							alert("No se pudo guardar la factura");
