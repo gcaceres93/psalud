@@ -77,7 +77,7 @@ $server->register('verificar_persona',
 
 
 $server->register('facturar',
-    array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time','direccion'=>'xsd:string','cantidadH'=>'xsd:integer','iva'=>'xsd:numeric','total'=>'xsd:numeric','usuario'=>'xsd:string'),
+    array ('fecha'=>'xsd:date','iva'=>'xsd:numeric','total'=>'xsd:numeric','usuario'=>'xsd:string'),
     array ('return'=>'xsd:string'),
     'urn:Servidor.facturar',
     'urn:Servidor.facturar',
@@ -85,6 +85,18 @@ $server->register('facturar',
     'encoded',
     'Facturar'
 );
+
+$server->register('facturar2',
+    array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time','direccion'=>'xsd:string','cantidadH'=>'xsd:integer','iva'=>'xsd:numeric','total'=>'xsd:numeric','usuario'=>'xsd:string'),
+    array ('return'=>'xsd:string'),
+    'urn:Servidor.facturar2',
+    'urn:Servidor.facturar2',
+    'rpc',
+    'encoded',
+    'Facturar2'
+);
+
+
 
 $server->register('verificar_fecha',
     array ('cedulaP' => 'xsd:string','cedulaM'=>'xsd:string','fecha'=>'xsd:date','horario'=>'xsd:time'),
@@ -265,11 +277,65 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
 }
 
 
-function facturar ($cedulaP,$cedulaM,$fecha,$horario,$direccion,$cantidadH,$iva,$total,$usuario){
+function facturar ($fecha,$iva,$total,$usuario){
 
     include_once 'biblioteca/conexionBd.php';
     $recursoDeConexion = conectar('postgresql');
 
+    $q="select (select max(valor_numero)  from parametros where nombre='ultimo_nro_factura') as ult_fact , (select valor_numero from parametros where nombre = 'timbrado') as timbrado, valor_fecha as vtim from parametros where nombre = 'vencimiento_timbrado'";
+
+
+
+    $res=ejecutarQueryPostgreSql($recursoDeConexion,$q);
+    return $q;
+
+    while ($row = pg_fetch_assoc($res) ) {
+        $factura_nro = $row["ult_fact"];
+        $timbrado = $row["timbrado"];
+        $venc_tim = $row["vtim"];
+
+    }
+
+
+
+    $factura_nro=$factura_nro+1;
+    $factura_nro2=$factura_nro;
+    $factura_nro='001-001-00'.$factura_nro;
+    $grav=$total-$iva;
+
+    $query2="insert into factura_detalle  (id_factura_concepto,iva10,gravada10) values (1,'$iva','$grav')";
+
+    $rs=ejecutarQueryPostgreSql($recursoDeConexion,$query2);
+
+
+    $qu="select max(id_factura_detalle) as fact from factura_detalle";
+
+
+    $rese=ejecutarQueryPostgreSql($recursoDeConexion,$qu);
+
+    while ($row = pg_fetch_assoc($rese)){
+
+        $idfacdet = $row["fact"];
+
+    }
+    session_start();
+    $_SESSION["nombre"]='asd';
+
+    $query="insert into factura_cabecera (id_factura_detalle,nro,fecha,monto_total,timbrado,vigencia_timbrado,usuario,tipo_pago) values ('$idfacdet','$factura_nro','$fecha','$total','$timbrado','$venc_tim','$usuario','C' )";
+    $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
+
+    $lq="update parametros set valor_numero='$factura_nro2' where nombre='ultimo_nro_factura'";
+    $resuSet = ejecutarQueryPostgreSql($recursoDeConexion,$lq);
+    return trim ('ok');
+
+
+
+}
+
+function facturar2 ($cedulaP,$cedulaM,$fecha,$horario,$direccion,$cantidadH,$iva,$total,$usuario){
+
+    include_once 'biblioteca/conexionBd.php';
+    $recursoDeConexion = conectar('postgresql');
 
     $q="select (select max(valor_numero)  from parametros where nombre='ultimo_nro_factura') as ult_fact , (select valor_numero from parametros where nombre = 'timbrado') as timbrado, valor_fecha as vtim from parametros where nombre = 'vencimiento_timbrado'";
 
@@ -293,10 +359,11 @@ function facturar ($cedulaP,$cedulaM,$fecha,$horario,$direccion,$cantidadH,$iva,
     $grav=$total-$iva;
 
     $query2="insert into factura_detalle  (id_factura_concepto,iva10,gravada10) values (1,'$iva','$grav')";
-
+    $rs=ejecutarQueryPostgreSql($recursoDeConexion,$query2);
 
 
     $qu="select max(id_factura_detalle) as fact from factura_detalle";
+
 
     $rese=ejecutarQueryPostgreSql($recursoDeConexion,$qu);
 
@@ -305,21 +372,23 @@ function facturar ($cedulaP,$cedulaM,$fecha,$horario,$direccion,$cantidadH,$iva,
         $idfacdet = $row["fact"];
 
     }
+    session_start();
+    $_SESSION["nombre"]='asd';
 
-
-    $rs=ejecutarQueryPostgreSql($recursoDeConexion,$query2);
-
-    $query="insert into factura_cabecera (id_factura_detalle,nro,fecha,monto_total,timbrado,vigencia_timbrado,usuario,tipo_pago) values ('$idfacdet','$factura_nro','$fecha','$total','$timbrado','$venc_tim','$usuario','C' )";
-
+    $query="insert into factura_cabecera (id_factura_detalle,nro,fecha,monto_total,timbrado,vigencia_timbrado,usuario,tipo_pago,cliente,medico,observacion,cant_horas) values ('$idfacdet','$factura_nro','$fecha','$total','$timbrado','$venc_tim','$usuario','C','$cedulaP','$cedulaM','$direccion','$cantidadH' )";
     $resultSet = ejecutarQueryPostgreSql($recursoDeConexion,$query);
 
     $lq="update parametros set valor_numero='$factura_nro2' where nombre='ultimo_nro_factura'";
     $resuSet = ejecutarQueryPostgreSql($recursoDeConexion,$lq);
+
+
     return trim ('ok');
 
 
 
 }
+
+
 
 function verificar_persona ($cedula){
     include_once 'biblioteca/conexionBd.php';
@@ -421,7 +490,7 @@ function recuperar_medico($cedula){
 }
 
 $HTTP_RAW_POST_DATA = isset($HTTP_RAW_POST_DATA) ? $HTTP_RAW_POST_DATA : '';
-
+$server->soap_defencoding = 'utf-8';
 $server->service($HTTP_RAW_POST_DATA);
 
 
