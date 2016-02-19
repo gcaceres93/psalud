@@ -31,7 +31,7 @@
 
 //session_start();
 //$rol=$_SESSION['rol'];
-$rol=2;
+$rol=1;
 
 
 
@@ -92,29 +92,9 @@ $rol=2;
         </ul></li>
     <li class="topmenu"><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/find.png" alt=""/>Consultorio</span></a>
         <ul>
-            <li ><a href="registrar%20consultorio.html">Registrar Consultorio</a></li>
             <li ><a href="registrar_consulta.php">Agendar Consulta</a></li>
         </ul></li>
-    <li class="topmenu"><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/eye.png" alt=""/>Tratamiento</span></a>
-        <ul>
-            <li ><a href="abm_diagnostico.php">Realizar Diagnostico</span></a>
-            <li ><a href="registrar Tratamiento.html">Registrar Tratamiento</span></a></li>
-            <li ><a href="registrar_seguimiento.html">Registrar Seguimiento</span></a></li>
-            <li><a href="./historico_paciente.php">Historico Paciente</span></a></li>
-        </ul></li>
-    <li class="topmenu" ><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/service1.png" alt=""/>Persona</span></a>
-        <ul>
-            <li ><a href="#"><span>Medicos</span></a>
-                <ul>
-                    <li><a href="addmedico.php">Agregar Medico</a></li>
-                    <li><a href="modificar_medico.php">Modificar Medico</a></li>
-                </ul></li>
-            <li><a href="#"><span>Paciente</span></a>
-                <ul>
-                    <li><a href="addpersona2.php">Agregar Paciente</a></li>
-                    <li  ><a href="modificar_paciente.php">Modificar Paciente</a></li>
-                </ul></li>
-        </ul></li>
+
     <li class="toplast" ><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/download.png" alt=""/>Facturación</span></a>
         <ul>
             <li ><a href="facturacion.php">Generar Costo Consulta</a></li>
@@ -132,11 +112,6 @@ $rol=2;
             <li><a href="login2.php">Usuarios</a></li>
             <li><a href="logout.php">Cerrar sesión</a></li>
         </ul></li>
-    <li class="topmenu"><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/find.png" alt=""/>Consultorio</span></a>
-        <ul>
-            <li ><a href="registrar%20consultorio.html">Registrar Consultorio</a></li>
-            <li ><a href="registrar_consulta.php">Agendar Consulta</a></li>
-        </ul></li>
     <li class="topmenu"><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/eye.png" alt=""/>Tratamiento</span></a>
         <ul>
             <li ><a href="abm_diagnostico.php">Realizar Diagnostico</span></a>
@@ -144,24 +119,7 @@ $rol=2;
             <li ><a href="registrar_seguimiento.html">Registrar Seguimiento</span></a></li>
             <li><a href="./historico_paciente.php">Historico Paciente</span></a></li>
         </ul></li>
-    <li class="topmenu" ><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/service1.png" alt=""/>Persona</span></a>
-        <ul>
-            <li ><a href="#"><span>Medicos</span></a>
-                <ul>
-                    <li><a href="addmedico.php">Agregar Medico</a></li>
-                    <li><a href="modificar_medico.php">Modificar Medico</a></li>
-                </ul></li>
-            <li><a href="#"><span>Paciente</span></a>
-                <ul>
-                    <li><a href="addpersona2.php">Agregar Paciente</a></li>
-                    <li  ><a href="modificar_paciente.php">Modificar Paciente</a></li>
-                </ul></li>
-        </ul></li>
-    <li class="toplast" ><a href="#"><span><img src="CSS3 Meeenu.css3prj_files/css3menu1/download.png" alt=""/>Facturación</span></a>
-        <ul>
-            <li ><a href="facturacion.php">Generar Costo Consulta</a></li>
-            <li ><a href="facturacion.php">Cancelar Factura</a></li>
-        </ul></li>
+
 </ul><br/>
 <?php } } ?>
 
