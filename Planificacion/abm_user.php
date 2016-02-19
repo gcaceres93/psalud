@@ -6,6 +6,8 @@
 	<meta name="viewport" content="initial-scale=1.0">
 	<title>Alta Usuario </title>
 		<!-- Start css3menu.com HEAD section -->
+
+
 	<style type="text/css">._css3m{display:none}</style>
 	<meta charset="utf-8">
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -51,43 +53,41 @@ $(document).ready(function(){
 
     $("#guardar").click(function(event){
 
-        var nombre= $("#nombre").val();
-        var apellido=$("#apellido").val();
-        var cedula=$("#cedula").val();
-        var fecha=$("#fecha_nacimiento").val();
-        var ruc=$("#ruc").val();
-        var telefono=$("#telefono").val();
-        var email=$("#email").val();
-        var direccion=$("#direccion").val();
-        var ventana='paciente';
+		var cedula=$("#cedula").val();
+        var usuario= $("#usuario").val();
+        var ingrese_contraseña=$("#ingrese_contraseña").val();
+        var confirme_contraseña=$("#confirme_contraseña").val();
+        var rol=$("#rol").val();
 
+	   if (ingrese_contraseña==confirme_contraseña){
+		   var datos={
+			   'cedula' : cedula,
+			   'usuario' : usuario,
+			   'contra': ingrese_contraseña,
+			   'contra2' : confirme_contraseña,
+			   'rol': rol,
+		   };
 
-        var datos={
-            'nombre': nombre,
-          'apellido': apellido,
-		  'cedula' : cedula,
-		  'fecha' : fecha,
-		  'ruc' : ruc,
-		  'telefono': telefono,
-		  'email': email,
-		  'direccion':direccion,
-		  'ventana':ventana
-		  };
+		   $.ajax({
+			   type:"post",
+			   url:"insertar_usuario.php",
+			   data: datos,
+			   success:function (data){
+				   if (data == "ok"){
 
-        $.ajax({
-            type:"post",
-            url:"insertar_usuario.php",
-            data: datos,
-            success:function (data){
-            if (data == "ok"){
+					   window.location = 'home.php';
 
-                window.location = 'home.php';
+				   }    else{
+					   $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
+				   }
+			   }
+		   });
+	   }
+		else{
 
-            }    else{
-                $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
-            }
-        }
-          });
+		   alert("Verifique constraseñas");
+	   }
+
         });
 
 
@@ -149,7 +149,23 @@ if(isset($_SESSION['usuario'])){
 					<label class="control-label col-xs-3">Rol:</label>
 
 					<div class="col-xs-9">
-						<input type="text" class="form-control" placeholder="Rol" name="rol" id='rol'>
+						<select id="rol" style='width:340px; height:35px'>
+
+
+						<?php
+						include_once 'biblioteca/conexionBd.php';
+						$recursoDeConexion = conectar('postgresql');
+
+						$query="select * from roles;";
+
+						$rs=ejecutarQueryPostgreSql($recursoDeConexion,$query);
+
+						while ($row=pg_fetch_assoc($rs)){
+							echo "<option value=". $row['rol'].">". $row['nombre']."</option> ";
+							}
+s
+						?>
+						</select>
 					</div>
 				</div>
 
