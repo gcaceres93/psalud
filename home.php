@@ -30,7 +30,7 @@
 </head>
 <body ontouchstart="" style="background-color:#A7C8FE">
 <!-- Start css3menu.com BODY section -->
-<?php include 'menu.html';?>
+<?php include 'menu.php';?>
 <div style="text-align:center;">
 	<fieldset style = "display: inline-block;">
   <div class="container">

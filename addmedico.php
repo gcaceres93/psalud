@@ -90,7 +90,7 @@ session_start();
 if(isset($_SESSION['usuario'])){
 
 ?>
-<?php include 'menu.html'; ?>
+<?php include 'menu.php'; ?>
 <div style="text-align:center;">
 	<fieldset style="display: inline-block;">
 		<div class="container">

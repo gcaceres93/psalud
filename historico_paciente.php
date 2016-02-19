@@ -34,7 +34,7 @@ session_start();
 if(isset($_SESSION['usuario'])){
 
 ?>
-<?php include 'menu.html'; ?>
+<?php include 'menu.php'; ?>
 <!-- Start css3menu.com BODY section -->
 
 
