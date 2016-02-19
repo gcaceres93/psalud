@@ -36,6 +36,7 @@
                 success:function (data){
                     if (data.cedula2 == cedula)
                     {
+                        window.ced=cedula;
                         $("#cedula").val(data.nombre);
                         $("#motivo_consultas").val(data.motivo_consultas);
                         $("#antecedentes_familiares").val(data.antecedentes_familiares);
@@ -48,8 +49,9 @@
                     }
                     else
                     {
-
+                        window.ced=cedula;
                         $("#cedula").val(data);
+
 
                     }
                 }
@@ -62,7 +64,9 @@
 
             $("#guardar").click(function(event){
 
-                var cedula= $("#cedula").val();
+                /*var cedula= $("#cedula").val();*/
+
+                var cedula=window.ced;
 
                 var motivo_consultas=$("#motivo_consultas").val();
                 var antecedentes_familiares=$("#antecedentes_familiares").val();
@@ -92,12 +96,13 @@
                     data: datos,
                     success:function (data){
 
-                        if (data == "ok2"){
+                        if (data == "ok"){
 
-                            alert ('ok');
+                            alert ('Guardado con Exito');
 
                         }    else{
 
+                            alert ('Ocurrio un problema con la carga');
                             $("#error").html("Error en la carga").fadeIn( 700 ).delay().fadeOut( 1000 );
                         }
                     }

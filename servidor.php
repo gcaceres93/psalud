@@ -265,12 +265,12 @@ function insertar_anamnesis($cedula,$motivo_consulta,$antecedentes_familiares,$a
     if ($exi == '1') {
         $que = "update anamnesis set motivo_consulta='$motivo_consulta', antecedentes_familiares='$antecedentes_familiares',antecedentes_desarrollo = '$antecedentes_desarrollo',aspectos_generales = '$aspectos_generales',conclusiones = '$conclusiones',observaciones = '$observaciones',plan_evaluacion = '$plan_evaluacion' where cedula='$cedula'";
         $rset = ejecutarQueryPostgreSql($recursoDeConexion,$que);
-        return utf8_encode('ok');
+        return ('ok');
 
     } else{
         $que = "insert into  anamnesis  (id_consulta,cedula,motivo_consulta, antecedentes_familiares,antecedentes_desarrollo,aspectos_generales,conclusiones,observaciones,plan_evaluacion) values ('$consulta','$cedula','$motivo_consulta','$antecedentes_familiares','$antecedentes_desarrollo','$aspectos_generales','$conclusiones','$observaciones','$plan_evaluacion')";
         $rset = ejecutarQueryPostgreSql($recursoDeConexion,$que);
-        return utf8_encode('ok');
+        return ('ok');
     }
 
 

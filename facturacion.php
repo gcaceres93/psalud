@@ -133,11 +133,11 @@
 					data:datos,
 					success:function (data){
 						if (data=="ok"){
-							alert(window.user);
+
 							alert("Factura Guardada con Exito");
 							confirmar=confirm("Desea visualizar la factura para imprimir: ");
 							if (confirmar)
-								window.open( "fac/index.php" )
+								window.open( "factura.php" )
 
 
 						}else{

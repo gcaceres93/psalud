@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"> </script>
     <script type="text/javascript">
-        var cedP;
-        var cedM;
+        var cedM
+        var cedP
         function buscarMedico() {
             var cedula= $("#cedulaMedico").val();
             $.ajax({
@@ -19,7 +19,7 @@
                 url:"buscarMedico.php",
                 data:{'cedula':cedula},
                 success:function (data){
-                    window.cedM=cedula;
+                    window.cedM= cedula;
                     $("#cedulaM").val(cedula);
                     $("#cedulaMedico").val(data);
                     $("#cedulaMedico").attr('disabled', 'disabled');
@@ -47,8 +47,10 @@
             });
         }
         function verificarFecha(){
-            var cedulaP= $("#cedulaP").val();
-            var cedulaM= $("#cedulaM").val();
+            //var cedulaP= $("#cedulaP").val();
+            //var cedulaM= $("#cedulaM").val();
+            var cedulaP=window.cedP;
+            var cedulaM=window.cedM;
             var fecha= $("#fecha").val();
             var horario = $("#horario").val();
             var datos={
@@ -74,6 +76,7 @@
                 }
             });
         }
+
         $(document).ready(function(){
 
 
@@ -154,7 +157,7 @@ if(isset($_SESSION['usuario'])){
   <div class="container">
            <h2>Agendar Consulta <img src="./agenda.png" height="64px" width="64px"> </h2>
 		   <br><br>
-<div class="form-horizontal" >
+<div class="form-horizontal">
 <div class="form-group">
 <label class="control-label col-xs-3">Paciente:</label>
 <div class="col-xs-9">
